@@ -228,6 +228,9 @@ class TimerApp(QWidget):
         combo_action_btn_width = 34
         combo_row_spacing = 6
         combo_field_width = car_panel_width - (combo_action_btn_width * 2) - (combo_row_spacing * 2)
+        search_row_spacing = 10
+        name_search_width = 332
+        sku_search_width = car_panel_width - name_search_width - search_row_spacing
         filter_row_spacing = 10
         filter_field_widths = [145, 144, 145]
 
@@ -249,8 +252,13 @@ class TimerApp(QWidget):
 
         self.car_search_input = QLineEdit()
         self.car_search_input.setPlaceholderText("Поиск авто по названию")
-        self.car_search_input.setFixedWidth(car_panel_width)
+        self.car_search_input.setFixedWidth(name_search_width)
         self.car_search_input.textChanged.connect(self.apply_car_filters)
+
+        self.car_sku_search_input = QLineEdit()
+        self.car_sku_search_input.setPlaceholderText("SKU")
+        self.car_sku_search_input.setFixedWidth(sku_search_width)
+        self.car_sku_search_input.textChanged.connect(self.apply_car_filters)
 
         self.add_car_btn = QPushButton("Создать новое авто")
         self.add_car_btn.setFixedWidth(car_panel_width)
@@ -386,7 +394,13 @@ class TimerApp(QWidget):
         combo_row_layout.addWidget(self.duplicate_car_btn)
 
         car_block_layout.addLayout(combo_row_layout)
-        car_block_layout.addWidget(self.car_search_input)
+        search_row_layout = QHBoxLayout()
+        search_row_layout.setSpacing(search_row_spacing)
+        search_row_layout.setContentsMargins(0, 0, 0, 0)
+        search_row_layout.addWidget(self.car_search_input)
+        search_row_layout.addWidget(self.car_sku_search_input)
+
+        car_block_layout.addLayout(search_row_layout)
         car_block_layout.addWidget(self.add_car_btn)
         car_block_layout.addStretch()
 
@@ -705,6 +719,7 @@ class TimerApp(QWidget):
 
         # Очищаем поиск и пересобираем список машин
         self.car_search_input.clear()
+        self.car_sku_search_input.clear()
         self.apply_car_filters()
 
         # Если передано имя новой машинки — выбираем её
@@ -896,6 +911,7 @@ class TimerApp(QWidget):
         selected_special = self.special_filter.currentText()
         selected_brand = self.brand_filter.currentText()
         search_text = self.car_search_input.text().strip().lower()
+        sku_search_text = self.car_sku_search_input.text().strip().lower()
 
         filtered_names = []
 
@@ -906,6 +922,7 @@ class TimerApp(QWidget):
 
             car_make = str(car.get("make", "")).strip()
             car_brand = str(car.get("brand", "")).strip()
+            car_sku = str(car.get("sku", "")).strip().lower()
             car_body = car.get("Body", [])
             car_type = car.get("Type", [])
             car_special = car.get("Special", [])
@@ -940,6 +957,10 @@ class TimerApp(QWidget):
 
             # Поиск по части названия
             if search_text and search_text not in car_name.lower():
+                continue
+
+            # Поиск по части SKU
+            if sku_search_text and sku_search_text not in car_sku:
                 continue
 
             filtered_names.append(car_name)
@@ -983,6 +1004,8 @@ class TimerApp(QWidget):
         self.special_filter.blockSignals(False)
         self.brand_filter.blockSignals(False)
 
+        self.car_search_input.clear()
+        self.car_sku_search_input.clear()
         self.apply_car_filters()
 
     # ===== АВТО: СОБЫТИЕ ВЫБОРА =====
