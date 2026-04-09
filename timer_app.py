@@ -30,7 +30,7 @@ from results_manager import ResultsManager
 from dialogs import AddCarDialog
 
 
-APP_VERSION = "1.2.2"
+APP_VERSION = "1.2.3"
 APP_STAGE = "BETA"
 APP_VERSION_LABEL = f"{APP_VERSION} {APP_STAGE}".strip()
 
@@ -200,6 +200,8 @@ class TimerApp(QWidget):
         self.set_ready_style()
 
         self.time_label = QLabel("Время: 0.000")
+        self.manual_race_btn = QPushButton("Старт")
+        self.manual_race_btn.clicked.connect(self.toggle_manual_race)
 
         # ===== БЛОК: АВТО И INFORMATION =====
         car_and_info_layout = QHBoxLayout()
@@ -556,6 +558,7 @@ class TimerApp(QWidget):
         current_layout.addWidget(self.mode_label)
         current_layout.addWidget(self.time_display)
         current_layout.addWidget(self.time_label)
+        current_layout.addWidget(self.manual_race_btn, alignment=Qt.AlignmentFlag.AlignCenter)
         current_layout.addLayout(car_and_info_layout)
 
         current_box.setLayout(current_layout)
@@ -1253,6 +1256,7 @@ class TimerApp(QWidget):
         self.start_beam.setText("Стартовый луч: Locked")
         self.finish_beam.setText("Финишный луч: Locked")
         self.save_btn.setEnabled(False)
+        self.manual_race_btn.setText("Старт")
         self.update_google_status_label()
 
         self.log("Система сброшена и готова к новому заезду")
@@ -1278,6 +1282,52 @@ class TimerApp(QWidget):
         except RuntimeError:
             pass
 
+    def start_race(self):
+        self.mode_label.setText("Режим системы: RACE")
+        self.start_beam.setText("Стартовый луч: Free")
+        self.finish_beam.setText("Финишный луч: Locked")
+        self.time_label.setText("Время: 0.000")
+        self.time_display.setText("0.000")
+        self.current_time = None
+        self.finish_time_from_module = None
+        self.save_btn.setEnabled(False)
+        self.manual_race_btn.setText("Финиш")
+
+        self.race_start_time = time.time()
+        self.play_event_sound("start")
+        self.set_race_style()
+        self.live_timer.start(10)
+
+    def finish_race(self, finish_time=None, preserve_start_time=False):
+        if finish_time is None and self.race_start_time is not None:
+            finish_time = time.time() - self.race_start_time
+
+        if finish_time is not None:
+            self.current_time = float(finish_time)
+            self.time_label.setText(f"Время: {self.current_time:.3f}")
+            self.time_display.setText(f"{self.current_time:.3f}")
+
+        self.mode_label.setText("Режим системы: FINISH")
+        self.finish_beam.setText("Финишный луч: Triggered")
+        self.live_timer.stop()
+        if not preserve_start_time:
+            self.race_start_time = None
+        self.manual_race_btn.setText("Старт")
+        self.save_btn.setEnabled(self.current_time is not None)
+        self.update_google_status_label()
+        self.play_event_sound("finish")
+        self.set_finish_style()
+        self.flash_finish()
+
+    def toggle_manual_race(self):
+        if self.race_start_time is None:
+            self.start_race()
+            self.log("Ручной старт выполнен кнопкой")
+            return
+
+        self.finish_race()
+        self.log(f"Ручной финиш выполнен кнопкой. Время: {self.current_time:.3f}")
+
     # ===== ОБРАБОТКА СООБЩЕНИЙ ОТ ESP32 =====
     def handle_esp32_message(self, message):
         if message == "CONNECTED":
@@ -1289,26 +1339,11 @@ class TimerApp(QWidget):
             return
 
         if message == "START":
-            self.mode_label.setText("Режим системы: RACE")
-            self.start_beam.setText("Стартовый луч: Free")
-            self.time_label.setText("Время: 0.000")
-            self.time_display.setText("0.000")
-            self.current_time = None
-            self.save_btn.setEnabled(False)
-
-            self.race_start_time = time.time()
-            self.play_event_sound("start")
-            self.set_race_style()
-            self.live_timer.start(10)
+            self.start_race()
             return
 
         if message == "FINISH":
-            self.mode_label.setText("Режим системы: FINISH")
-            self.finish_beam.setText("Финишный луч: Triggered")
-            self.live_timer.stop()
-            self.play_event_sound("finish")
-            self.set_finish_style()
-            self.flash_finish()
+            self.finish_race(preserve_start_time=True)
             return
 
         if message == "READY":
@@ -1322,6 +1357,7 @@ class TimerApp(QWidget):
             self.start_beam.setText("Стартовый луч: Locked")
             self.finish_beam.setText("Финишный луч: Locked")
             self.save_btn.setEnabled(False)
+            self.manual_race_btn.setText("Старт")
             self.update_google_status_label()
             return
 
