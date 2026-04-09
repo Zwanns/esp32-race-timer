@@ -30,7 +30,7 @@ from results_manager import ResultsManager
 from dialogs import AddCarDialog
 
 
-APP_VERSION = "1.2.3"
+APP_VERSION = "1.2.4"
 APP_STAGE = "BETA"
 APP_VERSION_LABEL = f"{APP_VERSION} {APP_STAGE}".strip()
 
@@ -1265,12 +1265,25 @@ class TimerApp(QWidget):
         if winsound is None:
             return
 
+        sound_files = {
+            "start": os.path.join("sounds", "start.wav"),
+            "finish": os.path.join("sounds", "finish.wav"),
+        }
         sound_aliases = {
             "start": "SystemAsterisk",
             "finish": "SystemExclamation",
         }
 
+        sound_file = sound_files.get(event_name)
         sound_alias = sound_aliases.get(event_name)
+
+        if sound_file and os.path.exists(sound_file):
+            try:
+                winsound.PlaySound(sound_file, winsound.SND_FILENAME | winsound.SND_ASYNC)
+                return
+            except RuntimeError:
+                pass
+
         if not sound_alias:
             return
 
