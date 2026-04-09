@@ -1,0 +1,2967 @@
+[
+  {
+    "_meta": "REFERENCE_OPTIONS",
+    "Body": [
+      "Sedan",
+      "Hatchback",
+      "Wagon",
+      "Coupe",
+      "Convertible",
+      "Fastback",
+      "Shooting Brake",
+      "Liftback",
+      "Formula 1"
+    ],
+    "Type": [
+      "City Car",
+      "Sports Car",
+      "Muscle Car",
+      "Supercar",
+      "Hypercar",
+      "Open Wheel",
+      "GT",
+      "Rally",
+      "Touring Car",
+      "Prototype"
+    ],
+    "Special": [
+      "Track-only",
+      "Tuned",
+      "Classic",
+      "Retro",
+      "Gulf Livery",
+      "Borla Livery",
+      "Advan Racing Livery",
+      "Drift",
+      "Police"
+    ]
+  },
+  {
+    "name": "Alfa Romeo Duetto '67 - Red",
+    "make": "Alfa Romeo",
+    "model": "Duetto",
+    "color": "Red",
+    "weight_g": 33.2,
+    "brand": "Matchbox",
+    "sku": "JBP03",
+    "image": "car_images/JBP03.webp",
+    "Body": [
+      "Convertible"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "GMA T.50S - Turquoise",
+    "make": "Gordon Murray Automotive",
+    "model": "T.50S",
+    "color": "Turquoise",
+    "weight_g": 36.1,
+    "brand": "Hot Wheels",
+    "sku": "JBB14",
+    "image": "car_images/JBB14.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Pontiac GTO '06 - Gloss Yellow",
+    "make": "Pontiac",
+    "model": "GTO",
+    "color": "Gloss Yellow",
+    "weight_g": 37.4,
+    "brand": "Hot Wheels",
+    "sku": "JKY10",
+    "image": "car_images/JKY10.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Toyota GR Supra '23 - Yellow",
+    "make": "Toyota",
+    "model": "GR Supra",
+    "color": "Yellow",
+    "weight_g": 30.0,
+    "brand": "Matchbox",
+    "sku": "C0859",
+    "image": "car_images/C0859.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned"
+    ]
+  },
+  {
+    "name": "Nissan 350Z Custom - Metalflake Dark Gray",
+    "make": "Nissan",
+    "model": "350Z",
+    "color": "Metalflake Dark Gray",
+    "weight_g": 33.1,
+    "brand": "Hot Wheels",
+    "sku": "HRW54",
+    "image": "car_images/HRW54.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned"
+    ]
+  },
+  {
+    "name": "Pontiac Firebird '84 - Metalflake Gray",
+    "make": "Pontiac",
+    "model": "Firebird",
+    "color": "Metalflake Gray",
+    "weight_g": 32.2,
+    "brand": "Hot Wheels",
+    "sku": "JKY09",
+    "image": "car_images/JKY09.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ford Mustang '67 - Black",
+    "make": "Ford",
+    "model": "Mustang",
+    "color": "Black",
+    "weight_g": 35.4,
+    "brand": "Hot Wheels",
+    "sku": "JBB13",
+    "image": "car_images/JBB13.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ford Mustang '67 - Red",
+    "make": "Ford",
+    "model": "Mustang",
+    "color": "Red",
+    "weight_g": 36.0,
+    "brand": "Hot Wheels",
+    "sku": "FJX91",
+    "image": "car_images/FJX91.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Porsche 911 GT3 RS - Light Green",
+    "make": "Porsche",
+    "model": "911 GT3 RS",
+    "color": "Light Green",
+    "weight_g": 30.9,
+    "brand": "Hot Wheels",
+    "sku": "KK033",
+    "image": "car_images/KK033.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "McLaren W1 - Metalflake Dark Gray",
+    "make": "McLaren",
+    "model": "W1",
+    "color": "Metalflake Dark Gray",
+    "weight_g": 30.3,
+    "brand": "Hot Wheels",
+    "sku": "JBC17",
+    "image": "car_images/JBC17.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Nissan Silvia S13 - Yellow",
+    "make": "Nissan",
+    "model": "Silvia S13",
+    "color": "Yellow",
+    "weight_g": 32.9,
+    "brand": "Hot Wheels",
+    "sku": "KK035",
+    "image": "car_images/KK035.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned"
+    ]
+  },
+  {
+    "name": "Dodge Coronet Super Bee '69 - Yellow",
+    "make": "Dodge",
+    "model": "Coronet Super Bee",
+    "color": "Yellow",
+    "weight_g": 34.6,
+    "brand": "Hot Wheels",
+    "sku": "JBB27",
+    "image": "car_images/JBB27.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Chevy Impala '66 - Lavender",
+    "make": "Chevrolet",
+    "model": "Impala",
+    "color": "Lavender",
+    "weight_g": 35.2,
+    "brand": "Hot Wheels",
+    "sku": "KK032",
+    "image": "car_images/KK032.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Dodge Charger Daytona '69 - Metalflake Gold",
+    "make": "Dodge",
+    "model": "Charger Daytona",
+    "color": "Metalflake Gold",
+    "weight_g": 34.8,
+    "brand": "Hot Wheels",
+    "sku": "JJH97",
+    "image": "car_images/JJH97.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ford Shelby GT500 '20 - Matte Gray",
+    "make": "Ford",
+    "model": "Shelby GT500",
+    "color": "Matte Gray",
+    "weight_g": 35.7,
+    "brand": "Hot Wheels",
+    "sku": "JJH87",
+    "image": "car_images/JJH87.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Tuned"
+    ]
+  },
+  {
+    "name": "Dodge Charger '70 - Black",
+    "make": "Dodge",
+    "model": "Charger",
+    "color": "Black",
+    "weight_g": 37.1,
+    "brand": "Hot Wheels",
+    "sku": "KK031",
+    "image": "car_images/KK031.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Honda Civic Custom '73 - Red",
+    "make": "Honda",
+    "model": "Civic",
+    "color": "Red",
+    "weight_g": 33.2,
+    "brand": "Hot Wheels",
+    "sku": "JBB42",
+    "image": "car_images/JBB42.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Honda Civic Custom '73 - Metalflake Teal",
+    "make": "Honda",
+    "model": "Civic",
+    "color": "Metalflake Teal",
+    "weight_g": 33.8,
+    "brand": "Hot Wheels",
+    "sku": "HTD62",
+    "image": "car_images/HTD62.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Honda Civic Custom '73 - Green",
+    "make": "Honda",
+    "model": "Civic",
+    "color": "Green",
+    "weight_g": 33.4,
+    "brand": "Hot Wheels",
+    "sku": "HKG40",
+    "image": "car_images/HKG40.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Honda Civic Custom '73 - Yellow",
+    "make": "Honda",
+    "model": "Civic",
+    "color": "Yellow",
+    "weight_g": 33.5,
+    "brand": "Hot Wheels",
+    "sku": "HTC19",
+    "image": "car_images/HTC19.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Toyota GR86 Cup - Dark Red",
+    "make": "Toyota",
+    "model": "GR86 Cup",
+    "color": "Dark Red",
+    "weight_g": 32.2,
+    "brand": "Hot Wheels",
+    "sku": "HYX74",
+    "image": "car_images/HYX74.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only",
+      "Tuned"
+    ]
+  },
+  {
+    "name": "Toyota GR86 Cup - Orange",
+    "make": "Toyota",
+    "model": "GR86 Cup",
+    "color": "Orange",
+    "weight_g": 32.8,
+    "brand": "Hot Wheels",
+    "sku": "HYX23",
+    "image": "car_images/HYX23.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Touring Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Porsche 911 Carrera T - Gloss Gray",
+    "make": "Porsche",
+    "model": "911 Carrera T",
+    "color": "Gloss Gray",
+    "weight_g": 30.7,
+    "brand": "Hot Wheels",
+    "sku": "JJH33",
+    "image": "car_images/JJH33.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Mazda MX-5 Miata - White",
+    "make": "Mazda",
+    "model": "MX-5 Miata",
+    "color": "White",
+    "weight_g": 28.4,
+    "brand": "Hot Wheels",
+    "sku": "JJJ02",
+    "image": "car_images/JJJ02.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned"
+    ]
+  },
+  {
+    "name": "Mazda MX-5 Miata - Gray",
+    "make": "Mazda",
+    "model": "MX-5 Miata",
+    "color": "Gray",
+    "weight_g": 28.6,
+    "brand": "Hot Wheels",
+    "sku": "HYW18",
+    "image": "car_images/HYW18.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Mazda MX-5 Miata - Green",
+    "make": "Mazda",
+    "model": "MX-5 Miata",
+    "color": "Green",
+    "weight_g": 28.4,
+    "brand": "Hot Wheels",
+    "sku": "HYX57",
+    "image": "car_images/HYX57.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned"
+    ]
+  },
+  {
+    "name": "Proton Saga - Red",
+    "make": "Proton",
+    "model": "Saga",
+    "color": "Red",
+    "weight_g": 32.4,
+    "brand": "Hot Wheels",
+    "sku": "HRY46",
+    "image": "car_images/HRY46.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Subaru WRX S4 STI 2024 - Blue",
+    "make": "Subaru",
+    "model": "WRX S4 STI 2024",
+    "color": "Blue",
+    "weight_g": 32.4,
+    "brand": "Matchbox",
+    "sku": "JBN60",
+    "image": "car_images/JBN60.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Cadillac Project GTP Hypercar - Red",
+    "make": "Cadillac",
+    "model": "Project GTP Hypercar",
+    "color": "Red",
+    "weight_g": 37.9,
+    "brand": "Hot Wheels",
+    "sku": "JBB91",
+    "image": "car_images/JBB91.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar",
+      "Prototype"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Plymouth Barracuda Formula S '68 - Blue",
+    "make": "Plymouth",
+    "model": "Barracuda Formula S '68",
+    "color": "Blue",
+    "weight_g": 30.3,
+    "brand": "Hot Wheels",
+    "sku": "KK034",
+    "image": "car_images/KK034.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Jaguar XJC V12 Coupe - White",
+    "make": "Jaguar",
+    "model": "XJC V12 Coupe",
+    "color": "White",
+    "weight_g": 34.0,
+    "brand": "Hot Wheels",
+    "sku": "HYW54",
+    "image": "car_images/HYW54.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Mazda RX-3 - Light Yellow",
+    "make": "Mazda",
+    "model": "RX-3",
+    "color": "Light Yellow",
+    "weight_g": 33.8,
+    "brand": "Hot Wheels",
+    "sku": "JBB47",
+    "image": "car_images/JBB47.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Alfa Romeo Giulia TI Super - Red",
+    "make": "Alfa Romeo",
+    "model": "Giulia TI Super",
+    "color": "Red",
+    "weight_g": 33.0,
+    "brand": "Hot Wheels",
+    "sku": "HYW40",
+    "image": "car_images/HYW40.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "Sports Car",
+      "Rally"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Dodge Challenger '70 - Pearlescent Gold",
+    "make": "Dodge",
+    "model": "Challenger '70",
+    "color": "Pearlescent Gold",
+    "weight_g": 36.4,
+    "brand": "Hot Wheels",
+    "sku": "JJJ07",
+    "image": "car_images/JJJ07.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Dodge Hemi Challenger '70 - Red",
+    "make": "Dodge",
+    "model": "Hemi Challenger '70",
+    "color": "Red",
+    "weight_g": 38.3,
+    "brand": "Hot Wheels",
+    "sku": "FJX79",
+    "image": "car_images/FJX79.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Pagani Utopia - Blue",
+    "make": "Pagani",
+    "model": "Utopia",
+    "color": "Blue",
+    "weight_g": 30.1,
+    "brand": "Hot Wheels",
+    "sku": "JBB38",
+    "image": "car_images/JBB38.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Czinger 21C - Orange",
+    "make": "Czinger",
+    "model": "21C",
+    "color": "Orange",
+    "weight_g": 26.4,
+    "brand": "Hot Wheels",
+    "sku": "JBB31",
+    "image": "car_images/JBB31.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Bentley Continental GT3 2018 - Gold",
+    "make": "Bentley",
+    "model": "Continental GT3 2018",
+    "color": "Gold",
+    "weight_g": 38.2,
+    "brand": "Hot Wheels",
+    "sku": "JBC18",
+    "image": "car_images/JBC18.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Ford Mustang GT '18 Custom - Blue",
+    "make": "Ford",
+    "model": "Mustang GT '18",
+    "color": "Blue",
+    "weight_g": 32.2,
+    "brand": "Hot Wheels",
+    "sku": "HYY94",
+    "image": "car_images/HYY94.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car",
+      "GT"
+    ],
+    "Special": [
+      "Tuned"
+    ]
+  },
+  {
+    "name": "Koenigsegg Jesko 2020 - Light Blue",
+    "make": "Koenigsegg",
+    "model": "Jesko 2020",
+    "color": "Light Blue",
+    "weight_g": 33.2,
+    "brand": "Hot Wheels",
+    "sku": "JBB59",
+    "image": "car_images/JBB59.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Ford RS200 - Gloss Light Blue",
+    "make": "Ford",
+    "model": "RS200",
+    "color": "Gloss Light Blue",
+    "weight_g": 32.8,
+    "brand": "Hot Wheels",
+    "sku": "JBB49",
+    "image": "car_images/JBB49.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Rally"
+    ],
+    "Special": [
+      "Classic",
+      "Gulf Livery"
+    ]
+  },
+  {
+    "name": "GMA T.33 - Blue",
+    "make": "Gordon Murray Automotive",
+    "model": "T.33",
+    "color": "Blue",
+    "weight_g": 27.9,
+    "brand": "Hot Wheels",
+    "sku": "JBB70",
+    "image": "car_images/JBB70.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Audi 90 Quattro - Gloss Black",
+    "make": "Audi",
+    "model": "90 Quattro",
+    "color": "Gloss Black",
+    "weight_g": 36.4,
+    "brand": "Hot Wheels",
+    "sku": "JBC04",
+    "image": "car_images/JBC04.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT",
+      "Rally"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Audi 90 Quattro - White",
+    "make": "Audi",
+    "model": "90 Quattro",
+    "color": "White",
+    "weight_g": 36.3,
+    "brand": "Hot Wheels",
+    "sku": "HKG35",
+    "image": "car_images/HKG35.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT",
+      "Rally"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Mazda RX-7 Drift '95 - Red",
+    "make": "Mazda",
+    "model": "RX-7",
+    "color": "Red",
+    "weight_g": 31.8,
+    "brand": "Hot Wheels",
+    "sku": "JBB57",
+    "image": "car_images/JBB57.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Mercury Cougar Eliminator '69 - Metalflake Olive Green",
+    "make": "Mercury Cougar",
+    "model": "Eliminator",
+    "color": "Metalflake Olive Green",
+    "weight_g": 38.2,
+    "brand": "Hot Wheels",
+    "sku": "HTD98",
+    "image": "car_images/HTD98.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ford GT - Matte Black",
+    "make": "Ford",
+    "model": "GT",
+    "color": "Matte Black",
+    "weight_g": 36.5,
+    "brand": "Hot Wheels",
+    "sku": "JBB75",
+    "image": "car_images/JBB75.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar",
+      "GT"
+    ],
+    "Special": [
+      "Track-only",
+      "Borla Livery"
+    ]
+  },
+  {
+    "name": "BMW 2002 - Blue",
+    "make": "BMW",
+    "model": "2002",
+    "color": "Blue",
+    "weight_g": 36.9,
+    "brand": "Hot Wheels",
+    "sku": "JBB61",
+    "image": "car_images/JBB61.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Peugeot 9x8 Hypercar - White",
+    "make": "Peugeot",
+    "model": "9x8 Hypercar",
+    "color": "White",
+    "weight_g": 40.3,
+    "brand": "Hot Wheels",
+    "sku": "HYW11",
+    "image": "car_images/HYW11.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar",
+      "Prototype"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Mazda 787B - White",
+    "make": "Mazda",
+    "model": "787B",
+    "color": "White",
+    "weight_g": 37.9,
+    "brand": "Hot Wheels",
+    "sku": "JBB39",
+    "image": "car_images/JBB39.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT",
+      "Prototype"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Shelby Cobra \"Daytona\" Coupe - Metalflake Dark Blue",
+    "make": "Shelby",
+    "model": "Cobra",
+    "color": "Metalflake Dark Blue",
+    "weight_g": 36.4,
+    "brand": "Hot Wheels",
+    "sku": "HTF10",
+    "image": "car_images/HTF10.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic",
+      "Gulf Livery"
+    ]
+  },
+  {
+    "name": "Shelby GT500 '67 - Black",
+    "make": "Shelby",
+    "model": "GT500 '67",
+    "color": "Black",
+    "weight_g": 39.8,
+    "brand": "Hot Wheels",
+    "sku": "JBB94",
+    "image": "car_images/JBB94.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ford Mustang Dark Horse - Matte Atlas Blue",
+    "make": "Ford",
+    "model": "Mustang Dark Horse",
+    "color": "Matte Atlas Blue",
+    "weight_g": 34.6,
+    "brand": "Hot Wheels",
+    "sku": "HRY93",
+    "image": "car_images/HRY93.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Nissan 35GT-RR VER.2 - Gray",
+    "make": "Nissan",
+    "model": "LB-Silhouette WORKS 35GT-RR VER.2",
+    "color": "Gray",
+    "weight_g": 35.1,
+    "brand": "Hot Wheels",
+    "sku": "HTC72",
+    "image": "car_images/HTC72.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Tuned"
+    ]
+  },
+  {
+    "name": "Pontiac Firebird '73 - White",
+    "make": "Pontiac",
+    "model": "Firebird '73",
+    "color": "White",
+    "weight_g": 29.8,
+    "brand": "Hot Wheels",
+    "sku": "JBB41",
+    "image": "car_images/JBB41.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Mercedes-Benz 500 E - Gray",
+    "make": "Mercedes-Benz",
+    "model": "500 E",
+    "color": "Gray",
+    "weight_g": 37.6,
+    "brand": "Hot Wheels",
+    "sku": "JBB60",
+    "image": "car_images/JBB60.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "City Car",
+      "Sports Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ferrari 365 GTB4 Competizione - Gloss Yellow",
+    "make": "Ferrari",
+    "model": "365 GTB4 Competizione",
+    "color": "Gloss Yellow",
+    "weight_g": 34.5,
+    "brand": "Hot Wheels",
+    "sku": "JBC19",
+    "image": "car_images/JBC19.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ferrari 365 GTB4 Competizione - Red",
+    "make": "Ferrari",
+    "model": "365 GTB4 Competizione",
+    "color": "Red",
+    "weight_g": 34.5,
+    "brand": "Hot Wheels",
+    "sku": "HYW48",
+    "image": "car_images/HYW48.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ford Fiesta '12 - Gloss Red",
+    "make": "Ford",
+    "model": "Fiesta '12",
+    "color": "Gloss Red",
+    "weight_g": 29.0,
+    "brand": "Hot Wheels",
+    "sku": "JKX58",
+    "image": "car_images/JKX58.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "Rally"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Ford Fiesta '12 - White",
+    "make": "Ford",
+    "model": "Fiesta '12",
+    "color": "White",
+    "weight_g": 28.3,
+    "brand": "Hot Wheels",
+    "sku": "FJY94",
+    "image": "car_images/FJY94.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "Rally"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Ford Fiesta '12 - Green",
+    "make": "Ford",
+    "model": "Fiesta '12",
+    "color": "Green",
+    "weight_g": 28.2,
+    "brand": "Hot Wheels",
+    "sku": "CFL64",
+    "image": "car_images/CFL64.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "Rally"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Nissan Senra SE-R '91 - Gloss White",
+    "make": "Nissan",
+    "model": "Sentra SE-R '91",
+    "color": "Gloss White",
+    "weight_g": 48.5,
+    "brand": "Hot Wheels",
+    "sku": "JKX60",
+    "image": "car_images/JKX60.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Mazda MX-5 Miata '15 - Metalflake Brown",
+    "make": "Mazda",
+    "model": "MX-5 Miata '15",
+    "color": "Metalflake Brown",
+    "weight_g": 30.0,
+    "brand": "Hot Wheels",
+    "sku": "JKX56",
+    "image": "car_images/JKX56.webp",
+    "Body": [
+      "Coupe",
+      "Convertible"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Honda Civic Type R (EK9) '99 - Metalflake Purple",
+    "make": "Honda",
+    "model": "Civic Type R (EK9) '99",
+    "color": "Metalflake Purple",
+    "weight_g": 34.2,
+    "brand": "Hot Wheels",
+    "sku": "JKX57",
+    "image": "car_images/JKX57.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Nissan Silvia (S15) - Blue",
+    "make": "Nissan",
+    "model": "Silvia (S15)",
+    "color": "Blue",
+    "weight_g": 36.3,
+    "brand": "Hot Wheels",
+    "sku": "JKX06",
+    "image": "car_images/JKX06.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Audi Quattro '87 - Metalflake Silver",
+    "make": "Audi",
+    "model": "Quattro '87",
+    "color": "Metalflake Silver",
+    "weight_g": 35.4,
+    "brand": "Hot Wheels",
+    "sku": "JKX61",
+    "image": "car_images/JKX61.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Rally"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "BWT Alpine F1 Team 2026",
+    "make": "Alpine",
+    "model": "A526",
+    "color": "Pink",
+    "weight_g": 26.5,
+    "brand": "Hot Wheels",
+    "sku": "MM035",
+    "image": "car_images/MM035.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Open Wheel"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Atlassian Williams F1 2026",
+    "make": "Williams",
+    "model": "FW48",
+    "color": "Blue",
+    "weight_g": 25.4,
+    "brand": "Hot Wheels",
+    "sku": "MM033",
+    "image": "car_images/MM033.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Open Wheel"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "TGR Haas F1 2026",
+    "make": "Haas",
+    "model": "VF-26",
+    "color": "Gloss White",
+    "weight_g": 26.4,
+    "brand": "Hot Wheels",
+    "sku": "MM032",
+    "image": "car_images/MM032.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Open Wheel"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Mercedes AMG Petronas F1",
+    "make": "Mercedes",
+    "model": "W16",
+    "color": "Satin Black",
+    "weight_g": 26.5,
+    "brand": "Hot Wheels",
+    "sku": "MM034",
+    "image": "car_images/MM034.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Open Wheel"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Oracle Red Bull Racing",
+    "make": "Red Bull",
+    "model": "RB22",
+    "color": "Gloss Dark Blue",
+    "weight_g": 26.8,
+    "brand": "Hot Wheels",
+    "sku": "NN031",
+    "image": "car_images/NN031.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Open Wheel"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Audi Quattro '87 - Red",
+    "make": "Audi",
+    "model": "Quattro '87",
+    "color": "Red",
+    "weight_g": 34.8,
+    "brand": "Hot Wheels",
+    "sku": "HRY55",
+    "image": "car_images/HRY55.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "City Car",
+      "Sports Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Nissan Skyline GT-R (BCNR33) - White",
+    "make": "Nissan",
+    "model": "Skyline GT-R (BCNR33)",
+    "color": "White",
+    "weight_g": 35.6,
+    "brand": "Hot Wheels",
+    "sku": "HTC44",
+    "image": "car_images/HTC44.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Drift"
+    ]
+  },
+  {
+    "name": "Volkswagen SP2 - Metallic Pale Yellow",
+    "make": "Volkswagen",
+    "model": "SP2",
+    "color": "Metallic Pale Yellow",
+    "weight_g": 33.1,
+    "brand": "Hot Wheels",
+    "sku": "FYD62",
+    "image": "car_images/FYD62.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ford Mustang SVO '84 - Metallic Silver",
+    "make": "Ford",
+    "model": "Mustang SVO '84",
+    "color": "Metallic Silver",
+    "weight_g": 42.0,
+    "brand": "Hot Wheels",
+    "sku": "HKG80",
+    "image": "car_images/HKG80.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Nissan 300ZX TT - White",
+    "make": "Nissan",
+    "model": "300ZX Twin Turbo",
+    "color": "White",
+    "weight_g": 37.4,
+    "brand": "Hot Wheels",
+    "sku": "FYB73",
+    "image": "car_images/FYB73.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Classic",
+      "Police"
+    ]
+  },
+  {
+    "name": "Ford GT-40 - Light Blue",
+    "make": "Ford",
+    "model": "GT-40",
+    "color": "Light Blue",
+    "weight_g": 35.2,
+    "brand": "Hot Wheels",
+    "sku": "GHC55",
+    "image": "car_images/GHC55.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic",
+      "Gulf Livery"
+    ]
+  },
+  {
+    "name": "Ford Mustang GT '18 Custom - Sky Blue",
+    "make": "Ford",
+    "model": "Mustang GT '18 Custom",
+    "color": "Sky Blue",
+    "weight_g": 30.8,
+    "brand": "Hot Wheels",
+    "sku": "FYB67",
+    "image": "car_images/FYB67.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Muscle Car",
+      "GT"
+    ],
+    "Special": [
+      "Track-only",
+      "Gulf Livery"
+    ]
+  },
+  {
+    "name": "Rimac Nevera - White",
+    "make": "Rimac",
+    "model": "Nevera",
+    "color": "White",
+    "weight_g": 31.1,
+    "brand": "Hot Wheels",
+    "sku": "HKK21",
+    "image": "car_images/HKK21.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Nissan 180SX Type X '96 - White",
+    "make": "Nissan",
+    "model": "180SX Type X '96",
+    "color": "White",
+    "weight_g": 33.5,
+    "brand": "Hot Wheels",
+    "sku": "FKB00",
+    "image": "car_images/FKB00.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "McMurtry Speirling - Blue",
+    "make": "McMurtry",
+    "model": "Speirling",
+    "color": "Blue",
+    "weight_g": 29.2,
+    "brand": "Hot Wheels",
+    "sku": "JJH81",
+    "image": "car_images/JJH81.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar",
+      "Prototype"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "McMurtry Speirling - Metallic Gray",
+    "make": "McMurtry",
+    "model": "Speirling",
+    "color": "Metallic Gray",
+    "weight_g": 29.1,
+    "brand": "Hot Wheels",
+    "sku": "HYW55",
+    "image": "car_images/HYW55.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar",
+      "Prototype"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Honda Civic Type R 2018 - Gloss White",
+    "make": "Honda",
+    "model": "Civic Type R 2018",
+    "color": "Gloss White",
+    "weight_g": 33.8,
+    "brand": "Hot Wheels",
+    "sku": "JJH88",
+    "image": "car_images/JJH88.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "City Car",
+      "Sports Car"
+    ],
+    "Special": []
+  },
+  {
+    "name": "GMA T.33 - Gloss Yellow",
+    "make": "Gordon Murray Automotive",
+    "model": "T.33",
+    "color": "Gloss Yellow",
+    "weight_g": 27.6,
+    "brand": "Hot Wheels",
+    "sku": "JJJ62",
+    "image": "car_images/JJJ62.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Porsche 917LH - Sky Blue",
+    "make": "Porsche",
+    "model": "917LH",
+    "color": "Sky Blue",
+    "weight_g": 35.9,
+    "brand": "Hot Wheels",
+    "sku": "FJV93",
+    "image": "car_images/FJV93.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Prototype"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic",
+      "Gulf Livery"
+    ]
+  },
+  {
+    "name": "Corvette '62 - Metalflake Gray",
+    "make": "Corvette",
+    "model": "'62",
+    "color": "Metalflake Gray",
+    "weight_g": 30.8,
+    "brand": "Hot Wheels",
+    "sku": "HKJ42",
+    "image": "car_images/HKJ42.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Retro"
+    ]
+  },
+  {
+    "name": "Nissan Sentra 2016 - Black",
+    "make": "Nissan",
+    "model": "Sentra 2016",
+    "color": "Black",
+    "weight_g": 35.0,
+    "brand": "Matchbox",
+    "sku": "JBR48",
+    "image": "car_images/JBR48.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Lotus Esprit S1 - Yellow",
+    "make": "Lotus",
+    "model": "Esprit S1",
+    "color": "Yellow",
+    "weight_g": 28.0,
+    "brand": "Hot Wheels",
+    "sku": "DD029",
+    "image": "car_images/DD029.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Porsche 934 Turbo RSR - Green",
+    "make": "Porsche",
+    "model": "934 Turbo RSR",
+    "color": "Green",
+    "weight_g": 35.9,
+    "brand": "Hot Wheels",
+    "sku": "FKB18",
+    "image": "car_images/FKB18.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Pontiac GTO Judge '70 - Pearlescent Dark Green",
+    "make": "Pontiac",
+    "model": "GTO Judge '70",
+    "color": "Pearlescent Dark Green",
+    "weight_g": 37.0,
+    "brand": "Hot Wheels",
+    "sku": "JKY13",
+    "image": "car_images/JKY13.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "GMA T.33 - Metalflake Dark Green",
+    "make": "Gordon Murray Automotive",
+    "model": "T.33",
+    "color": "Metalflake Dark Green",
+    "weight_g": 27.3,
+    "brand": "Hot Wheels",
+    "sku": "JJL44",
+    "image": "car_images/JJL44.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Volkswagen Golf Mk7 - Orange",
+    "make": "Volkswagen",
+    "model": "Golf Mk7",
+    "color": "Orange",
+    "weight_g": 34.9,
+    "brand": "Hot Wheels",
+    "sku": "FJX96",
+    "image": "car_images/FJX96.webp",
+    "Body": [
+      "Hatchback",
+      "Coupe"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": [
+      "Tuned"
+    ]
+  },
+  {
+    "name": "Subaru Impreza 22B STI-Version '98 - Blue",
+    "make": "Subaru",
+    "model": "Impreza 22B STI-Version '98",
+    "color": "Blue",
+    "weight_g": 36.2,
+    "brand": "Hot Wheels",
+    "sku": "GHB42",
+    "image": "car_images/GHB42.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Rally"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Dodge Charger V8 Batmobile - Dark Gray",
+    "make": "Dodge",
+    "model": "Charger V8 Batmobile",
+    "color": "Dark Gray",
+    "weight_g": 36.4,
+    "brand": "Hot Wheels",
+    "sku": "JJH83",
+    "image": "car_images/JJH83.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Chevrolet Corvette '55 - Blue",
+    "make": "Chevrolet",
+    "model": "Corvette '55",
+    "color": "Blue",
+    "weight_g": 33.0,
+    "brand": "Hot Wheels",
+    "sku": "FKB19",
+    "image": "car_images/FKB19.webp",
+    "Body": [
+      "Coupe",
+      "Convertible"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Retro"
+    ]
+  },
+  {
+    "name": "Lamborghini Veneno - Gray",
+    "make": "Lamborghini",
+    "model": "Veneno",
+    "color": "Gray",
+    "weight_g": 32.5,
+    "brand": "Hot Wheels",
+    "sku": "GBB64",
+    "image": "car_images/GBB64.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Nissan Skyline 2000 GT-R - Blue",
+    "make": "Nissan",
+    "model": "Skyline 2000 GT-R",
+    "color": "Blue",
+    "weight_g": 37.6,
+    "brand": "Hot Wheels",
+    "sku": "FJX88",
+    "image": "car_images/FJX88.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ford Escort - Black",
+    "make": "Ford",
+    "model": "Escort",
+    "color": "Black",
+    "weight_g": 37.6,
+    "brand": "Hot Wheels",
+    "sku": "JBB17",
+    "image": "car_images/JBB17.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Rally"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Subaru BRZ - Blue",
+    "make": "Subaru",
+    "model": "BRZ",
+    "color": "Blue",
+    "weight_g": 32.5,
+    "brand": "Hot Wheels",
+    "sku": "HYW99",
+    "image": "car_images/HYW99.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Nissan Skyline GT-R R33 - Purple",
+    "make": "Nissan",
+    "model": "Skyline GT-R R33",
+    "color": "Purple",
+    "weight_g": 36.4,
+    "brand": "Hot Wheels",
+    "sku": "FJY75",
+    "image": "car_images/FJY75.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Drift"
+    ]
+  },
+  {
+    "name": "Nissan Skyline GT-R (BCNR33) - Dark Blue",
+    "make": "Nissan",
+    "model": "Skyline GT-R (BCNR33)",
+    "color": "Dark Blue",
+    "weight_g": 34.6,
+    "brand": "Hot Wheels",
+    "sku": "HYY04",
+    "image": "car_images/HYY04.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Drift"
+    ]
+  },
+  {
+    "name": "GMA T.33 - Gray",
+    "make": "Gordon Murray Automotive",
+    "model": "T.33",
+    "color": "Gray",
+    "weight_g": 27.5,
+    "brand": "Hot Wheels",
+    "sku": "HYW23",
+    "image": "car_images/HYW23.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Pontiac GTO '06 - Blue",
+    "make": "Pontiac",
+    "model": "GTO '06",
+    "color": "Blue",
+    "weight_g": 37.6,
+    "brand": "Hot Wheels",
+    "sku": "GTB72",
+    "image": "car_images/GTB72.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Nissan 180SX Type X '96 - Black",
+    "make": "Nissan",
+    "model": "180SX Type X '96",
+    "color": "Black",
+    "weight_g": 33.6,
+    "brand": "Hot Wheels",
+    "sku": "FJX70",
+    "image": "car_images/FJX70.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Pontiac GTO Judge '70 - Metallic Dark Blue",
+    "make": "Pontiac",
+    "model": "GTO Judge '70",
+    "color": "Metallic Dark Blue",
+    "weight_g": 37.4,
+    "brand": "Hot Wheels",
+    "sku": "V5407",
+    "image": "car_images/V5407.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Mazda MX-5 Miata '15 - Orange",
+    "make": "Mazda",
+    "model": "MX-5 Miata '15",
+    "color": "Orange",
+    "weight_g": 30.2,
+    "brand": "Hot Wheels",
+    "sku": "HTD22",
+    "image": "car_images/HTD22.webp",
+    "Body": [
+      "Convertible"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Drift"
+    ]
+  },
+  {
+    "name": "Audi Sport Quattro '84 - Blue",
+    "make": "Audi",
+    "model": "Sport Quattro '84",
+    "color": "Blue",
+    "weight_g": 35.9,
+    "brand": "Hot Wheels",
+    "sku": "HCX60",
+    "image": "car_images/HCX60.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Rally"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Audi Sport Quattro '84 - Yellow",
+    "make": "Audi",
+    "model": "Sport Quattro '84",
+    "color": "Yellow",
+    "weight_g": 36.0,
+    "brand": "Hot Wheels",
+    "sku": "HCV29",
+    "image": "car_images/HCV29.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Rally"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Audi Sport Quattro '84 - Dark Green",
+    "make": "Audi",
+    "model": "Sport Quattro '84",
+    "color": "Dark Green",
+    "weight_g": 36.8,
+    "brand": "Hot Wheels",
+    "sku": "FYF53",
+    "image": "car_images/FYF53.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Rally"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Lamborghini Countach Police Car - Black",
+    "make": "Lamborghini",
+    "model": "Countach Police Car",
+    "color": "Black",
+    "weight_g": 37.5,
+    "brand": "Hot Wheels",
+    "sku": "FYC79",
+    "image": "car_images/FYC79.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [
+      "Classic",
+      "Police"
+    ]
+  },
+  {
+    "name": "Lamborghini Countach Police Car - Blue",
+    "make": "Lamborghini",
+    "model": "Countach Police Car",
+    "color": "Blue",
+    "weight_g": 38.5,
+    "brand": "Hot Wheels",
+    "sku": "FYG84",
+    "image": "car_images/FYG84.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [
+      "Classic",
+      "Police"
+    ]
+  },
+  {
+    "name": "BMW M3 '92 - White",
+    "make": "BMW",
+    "model": "M3 '92",
+    "color": "White",
+    "weight_g": 39.7,
+    "brand": "Hot Wheels",
+    "sku": "GBB68",
+    "image": "car_images/GBB68.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Classic",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Lotus Type 49 '67 - Dark Green",
+    "make": "Lotus",
+    "model": "Type 49 '67",
+    "color": "Dark Green",
+    "weight_g": 30.5,
+    "brand": "Hot Wheels",
+    "sku": "HTD99",
+    "image": "car_images/HTD99.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only",
+      "Retro"
+    ]
+  },
+  {
+    "name": "Lotus Type 49 '67 - Red",
+    "make": "Lotus",
+    "model": "Type 49 '67",
+    "color": "Red",
+    "weight_g": 30.7,
+    "brand": "Hot Wheels",
+    "sku": "HYX18",
+    "image": "car_images/HYX18.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only",
+      "Retro"
+    ]
+  },
+  {
+    "name": "Stake F1 Team Kick Sauber 2025",
+    "make": "Sauber",
+    "model": "Stake F1 Team Kick Sauber 2025",
+    "color": "Black",
+    "weight_g": 26.6,
+    "brand": "Hot Wheels",
+    "sku": "KK025",
+    "image": "car_images/KK025.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "McLaren F1 Team 2025",
+    "make": "McLaren",
+    "model": "F1 Team 2025",
+    "color": "Orange",
+    "weight_g": 26.7,
+    "brand": "Hot Wheels",
+    "sku": "kk023",
+    "image": "car_images/kk023.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "BWT Alpine F1 Team 2025",
+    "make": "Alpine",
+    "model": "BWT Alpine F1 Team 2025",
+    "color": "Pink",
+    "weight_g": 26.2,
+    "brand": "Hot Wheels",
+    "sku": "kk021",
+    "image": "car_images/kk021.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "MoneyGram Haas F1 Team 2025",
+    "make": "Haas",
+    "model": "MoneyGram Haas F1 Team",
+    "color": "Black",
+    "weight_g": 26.2,
+    "brand": "Hot Wheels",
+    "sku": "kk022",
+    "image": "car_images/kk022.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Racing Bulls Formula One Team 2024",
+    "make": "Racing Bulls",
+    "model": "Racing Bulls Formula One Team 2024",
+    "color": "Dark Blue",
+    "weight_g": 26.4,
+    "brand": "Hot Wheels",
+    "sku": "kk024",
+    "image": "car_images/kk024.webp",
+    "Body": [
+      "Formula 1"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Lamborghini Miura SV '71 - Red",
+    "make": "Lamborghini",
+    "model": "Miura SV '71",
+    "color": "Red",
+    "weight_g": 29.4,
+    "brand": "Hot Wheels",
+    "sku": "hyx22",
+    "image": "car_images/hyx22.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Lamborghini Miura SV '71 - Orange",
+    "make": "Lamborghini",
+    "model": "Miura SV '71",
+    "color": "Orange",
+    "weight_g": 29.9,
+    "brand": "Hot Wheels",
+    "sku": "hcv34",
+    "image": "car_images/hcv34.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Lamborghini Miura SV '71 - Blue",
+    "make": "Lamborghini",
+    "model": "Miura SV '71",
+    "color": "Blue",
+    "weight_g": 29.0,
+    "brand": "Hot Wheels",
+    "sku": "hcx02",
+    "image": "car_images/hcx02.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Cadillac Project GTP Hypercar - Blue",
+    "make": "Cadillac",
+    "model": "Project GTP Hypercar",
+    "color": "Blue",
+    "weight_g": 37.4,
+    "brand": "Hot Wheels",
+    "sku": "jgj13",
+    "image": "car_images/jgj13.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar",
+      "Prototype"
+    ],
+    "Special": [
+      "Track-only"
+    ]
+  },
+  {
+    "name": "Lamborghini Centenario Roadster '16 - Redk",
+    "make": "Lamborghini",
+    "model": "Centenario Roadster '16",
+    "color": "Redk",
+    "weight_g": 31.2,
+    "brand": "Hot Wheels",
+    "sku": "gln67",
+    "image": "car_images/gln67.webp",
+    "Body": [
+      "Coupe",
+      "Convertible"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Lancia Delta Integrale - Black",
+    "make": "Lancia",
+    "model": "Delta Integrale",
+    "color": "Black",
+    "weight_g": 37.7,
+    "brand": "Hot Wheels",
+    "sku": "gtb59",
+    "image": "car_images/gtb59.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "Sports Car",
+      "Rally"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Lancia Delta Integrale - White",
+    "make": "Lancia",
+    "model": "Delta Integrale",
+    "color": "White",
+    "weight_g": 38.3,
+    "brand": "Hot Wheels",
+    "sku": "grx51",
+    "image": "car_images/grx51.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "Sports Car",
+      "Rally"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Maserati Shamal - Red",
+    "make": "Maserati",
+    "model": "Shamal",
+    "color": "Red",
+    "weight_g": 33.7,
+    "brand": "Hot Wheels",
+    "sku": "hyw21",
+    "image": "car_images/hyw21.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Mercedes-Benz 500 E - Black",
+    "make": "Mercedes-Benz",
+    "model": "500 E",
+    "color": "Black",
+    "weight_g": 38.5,
+    "brand": "Hot Wheels",
+    "sku": "GRX59",
+    "image": "car_images/GRX59.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "City Car",
+      "Sports Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ford Mustang '92 - Black",
+    "make": "Ford",
+    "model": "Mustang '92",
+    "color": "Black",
+    "weight_g": 42.5,
+    "brand": "Hot Wheels",
+    "sku": "hyy68",
+    "image": "car_images/hyy68.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ford Mustang '92 - Metalflake Aquamarine Blue",
+    "make": "Ford",
+    "model": "Mustang '92",
+    "color": "Metalflake Aquamarine Blue",
+    "weight_g": 43.5,
+    "brand": "Hot Wheels",
+    "sku": "fyc53",
+    "image": "car_images/fyc53.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Rimac Nevera - Riviera Blue",
+    "make": "Rimac",
+    "model": "Nevera",
+    "color": "Riviera Blue",
+    "weight_g": 31.1,
+    "brand": "Hot Wheels",
+    "sku": "hkg36",
+    "image": "car_images/hkg36.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Koenigsegg Jesko 2020 - Tang Orange",
+    "make": "Koenigsegg",
+    "model": "Jesko 2020",
+    "color": "Tang Orange",
+    "weight_g": 34.6,
+    "brand": "Hot Wheels",
+    "sku": "htf07",
+    "image": "car_images/htf07.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Koenigsegg Jesko 2020 - Yellow",
+    "make": "Koenigsegg",
+    "model": "Jesko 2020",
+    "color": "Yellow",
+    "weight_g": 33.3,
+    "brand": "Hot Wheels",
+    "sku": "hyy66",
+    "image": "car_images/hyy66.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Koenigsegg Jesko 2020 - Metalflake Battle Gray",
+    "make": "Koenigsegg",
+    "model": "Jesko 2020",
+    "color": "Metalflake Battle Gray",
+    "weight_g": 33.5,
+    "brand": "Hot Wheels",
+    "sku": "ghb39",
+    "image": "car_images/ghb39.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar"
+    ],
+    "Special": []
+  },
+  {
+    "name": "Dodge Hemi Challenger '70 - Purple",
+    "make": "Dodge",
+    "model": "Hemi Challenger '70",
+    "color": "Purple",
+    "weight_g": 36.5,
+    "brand": "Hot Wheels",
+    "sku": "hyy96",
+    "image": "car_images/hyy96.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Chevrolet Camaro '67 - Gold",
+    "make": "Chevrolet",
+    "model": "Camaro '67",
+    "color": "Gold",
+    "weight_g": 38.8,
+    "brand": "Hot Wheels",
+    "sku": "jjj26",
+    "image": "car_images/jjj26.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Chevrolet Camaro '69 - Red",
+    "make": "Chevrolet",
+    "model": "Camaro '69",
+    "color": "Red",
+    "weight_g": 38.8,
+    "brand": "Hot Wheels",
+    "sku": "hnt14",
+    "image": "car_images/hnt14.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Dodge Charger 500 '69 - Black",
+    "make": "Dodge",
+    "model": "Charger 500 '69",
+    "color": "Black",
+    "weight_g": 41.5,
+    "brand": "Hot Wheels",
+    "sku": "fyc18",
+    "image": "car_images/fyc18.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Dodge Charger 500 '69 - Blue Metallic",
+    "make": "Dodge",
+    "model": "Charger 500 '69",
+    "color": "Blue Metallic",
+    "weight_g": 40.0,
+    "brand": "Hot Wheels",
+    "sku": "fkb08",
+    "image": "car_images/fkb08.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Dodge Charger '70 - Metalflake Dark Blue",
+    "make": "Dodge",
+    "model": "Charger '70",
+    "color": "Metalflake Dark Blue",
+    "weight_g": 39.6,
+    "brand": "Hot Wheels",
+    "sku": "ghd07",
+    "image": "car_images/ghd07.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Honda CR-X '88 - Black",
+    "make": "Honda",
+    "model": "CR-X '88",
+    "color": "Black",
+    "weight_g": 31.3,
+    "brand": "Hot Wheels",
+    "sku": "fyf80",
+    "image": "car_images/fyf80.webp",
+    "Body": [
+      "Hatchback",
+      "Coupe"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Honda CR-X '88 - Red",
+    "make": "Honda",
+    "model": "CR-X '88",
+    "color": "Red",
+    "weight_g": 32.5,
+    "brand": "Hot Wheels",
+    "sku": "fyb70",
+    "image": "car_images/fyb70.webp",
+    "Body": [
+      "Hatchback",
+      "Coupe"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Honda CR-X '88 - White",
+    "make": "Honda",
+    "model": "CR-X '88",
+    "color": "White",
+    "weight_g": 32.6,
+    "brand": "Hot Wheels",
+    "sku": "ghc10",
+    "image": "car_images/ghc10.webp",
+    "Body": [
+      "Hatchback",
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Classic",
+      "Drift"
+    ]
+  },
+  {
+    "name": "Ford Mustang Convertible '65 - Light Blue",
+    "make": "Ford",
+    "model": "Mustang Convertible '65",
+    "color": "Light Blue",
+    "weight_g": 30.9,
+    "brand": "Hot Wheels",
+    "sku": "ghc77",
+    "image": "car_images/ghc77.webp",
+    "Body": [
+      "Coupe",
+      "Convertible"
+    ],
+    "Type": [
+      "City Car",
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Plymouth Barracuda '70 - Metalflake Dark Blue",
+    "make": "Plymouth",
+    "model": "Barracuda '70",
+    "color": "Metalflake Dark Blue",
+    "weight_g": 35.3,
+    "brand": "Hot Wheels",
+    "sku": "htc13",
+    "image": "car_images/htc13.webp",
+    "Body": [
+      "Coupe",
+      "Convertible"
+    ],
+    "Type": [
+      "City Car",
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Shelby GT-500 '07 - Pearl White",
+    "make": "Shelby",
+    "model": "GT-500 '07",
+    "color": "Pearl White",
+    "weight_g": 31.9,
+    "brand": "Hot Wheels",
+    "sku": "l9915",
+    "image": "car_images/l9915.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Muscle Car",
+      "GT"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Shelby GT-500 '67 - Metalflake Blue",
+    "make": "Shelby",
+    "model": "GT-500 '67",
+    "color": "Metalflake Blue",
+    "weight_g": 42.7,
+    "brand": "Hot Wheels",
+    "sku": "fyc45",
+    "image": "car_images/fyc45.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Shelby GT500 '68 - Metalflake Magenta",
+    "make": "Shelby",
+    "model": "GT500 '68",
+    "color": "Metalflake Magenta",
+    "weight_g": 35.2,
+    "brand": "Hot Wheels",
+    "sku": "ghf58",
+    "image": "car_images/ghf58.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Muscle Car",
+      "GT"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Ford Mustang 2+2 Fastback '65 - Ivy Green",
+    "make": "Ford",
+    "model": "Mustang 2+2 Fastback '65",
+    "color": "Ivy Green",
+    "weight_g": 37.5,
+    "brand": "Hot Wheels",
+    "sku": "hcv37",
+    "image": "car_images/hcv37.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Porsche 904 Carrera GTS - Red",
+    "make": "Porsche",
+    "model": "904 Carrera GTS",
+    "color": "Red",
+    "weight_g": 26.0,
+    "brand": "Hot Wheels",
+    "sku": "htd94",
+    "image": "car_images/htd94.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic"
+    ]
+  },
+  {
+    "name": "Porsche 904 Carrera GTS - Bright Yellow",
+    "make": "Porsche",
+    "model": "904 Carrera GTS",
+    "color": "Bright Yellow",
+    "weight_g": 26.2,
+    "brand": "Hot Wheels",
+    "sku": "hyx41",
+    "image": "car_images/hyx41.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic"
+    ]
+  }
+]
