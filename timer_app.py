@@ -224,10 +224,17 @@ class TimerApp(QWidget):
         self.car_block_title = QLabel("Car (0)")
         self.car_block_title.setStyleSheet("font-size: 16px; font-weight: bold;")
 
+        car_panel_width = 454
+        combo_action_btn_width = 34
+        combo_row_spacing = 6
+        combo_field_width = car_panel_width - (combo_action_btn_width * 2) - (combo_row_spacing * 2)
+        filter_row_spacing = 10
+        filter_field_widths = [145, 144, 145]
+
         self.car_combo = QComboBox()
         self.car_combo.addItem("— Не выбрано —")
         self.car_combo.addItems(self.car_names)
-        self.car_combo.setFixedWidth(380)
+        self.car_combo.setFixedWidth(combo_field_width)
         self.car_combo.currentIndexChanged.connect(self.on_car_selection_changed)
 
         self.edit_car_btn = QPushButton("✎")
@@ -242,11 +249,11 @@ class TimerApp(QWidget):
 
         self.car_search_input = QLineEdit()
         self.car_search_input.setPlaceholderText("Поиск авто по названию")
-        self.car_search_input.setFixedWidth(380)
+        self.car_search_input.setFixedWidth(car_panel_width)
         self.car_search_input.textChanged.connect(self.apply_car_filters)
 
         self.add_car_btn = QPushButton("Создать новое авто")
-        self.add_car_btn.setFixedWidth(380)  # ширина как у полей выше
+        self.add_car_btn.setFixedWidth(car_panel_width)
         self.add_car_btn.clicked.connect(self.open_add_car_dialog)
 
         car_block_layout.addWidget(self.car_block_title)
@@ -254,12 +261,15 @@ class TimerApp(QWidget):
         # ===== ФИЛЬТРЫ МАШИНОК =====
         filters_main_layout = QVBoxLayout()
         filters_main_layout.setSpacing(6)
+        filters_main_layout.setContentsMargins(0, 0, 0, 0)
 
         filters_top_row = QHBoxLayout()
-        filters_top_row.setSpacing(10)
+        filters_top_row.setSpacing(filter_row_spacing)
+        filters_top_row.setContentsMargins(0, 0, 0, 0)
 
         filters_bottom_row = QHBoxLayout()
-        filters_bottom_row.setSpacing(10)
+        filters_bottom_row.setSpacing(filter_row_spacing)
+        filters_bottom_row.setContentsMargins(0, 0, 0, 0)
 
         # ----- Make -----
         make_filter_block = QVBoxLayout()
@@ -270,7 +280,7 @@ class TimerApp(QWidget):
 
         self.make_filter = QComboBox()
         self.make_filter.addItems(self.make_options)
-        self.make_filter.setFixedWidth(120)
+        self.make_filter.setFixedWidth(filter_field_widths[0])
 
         make_filter_block.addWidget(self.make_filter_title)
         make_filter_block.addWidget(self.make_filter)
@@ -284,7 +294,7 @@ class TimerApp(QWidget):
 
         self.type_filter = QComboBox()
         self.type_filter.addItems(self.type_options)
-        self.type_filter.setFixedWidth(140)
+        self.type_filter.setFixedWidth(filter_field_widths[1])
 
         type_filter_block.addWidget(self.type_filter_title)
         type_filter_block.addWidget(self.type_filter)
@@ -298,7 +308,7 @@ class TimerApp(QWidget):
 
         self.body_filter = QComboBox()
         self.body_filter.addItems(self.body_options)
-        self.body_filter.setFixedWidth(120)
+        self.body_filter.setFixedWidth(filter_field_widths[2])
 
         body_filter_block.addWidget(self.body_filter_title)
         body_filter_block.addWidget(self.body_filter)
@@ -312,7 +322,7 @@ class TimerApp(QWidget):
 
         self.special_filter = QComboBox()
         self.special_filter.addItems(self.special_options)
-        self.special_filter.setFixedWidth(120)
+        self.special_filter.setFixedWidth(filter_field_widths[0])
 
         special_filter_block.addWidget(self.special_filter_title)
         special_filter_block.addWidget(self.special_filter)
@@ -326,7 +336,7 @@ class TimerApp(QWidget):
 
         self.brand_filter = QComboBox()
         self.brand_filter.addItems(self.brand_options)
-        self.brand_filter.setFixedWidth(140)
+        self.brand_filter.setFixedWidth(filter_field_widths[1])
 
         brand_filter_block.addWidget(self.brand_filter_title)
         brand_filter_block.addWidget(self.brand_filter)
@@ -339,7 +349,7 @@ class TimerApp(QWidget):
         self.clear_filters_title.setStyleSheet("font-size: 11px; color: #b0b0b0;")
 
         self.clear_filters_btn = QPushButton("Очистить")
-        self.clear_filters_btn.setFixedWidth(120)
+        self.clear_filters_btn.setFixedWidth(filter_field_widths[2])
 
         clear_filters_block.addWidget(self.clear_filters_title)
         clear_filters_block.addWidget(self.clear_filters_btn)
@@ -369,7 +379,8 @@ class TimerApp(QWidget):
 
         car_block_layout.addLayout(filters_main_layout)
         combo_row_layout = QHBoxLayout()
-        combo_row_layout.setSpacing(6)
+        combo_row_layout.setSpacing(combo_row_spacing)
+        combo_row_layout.setContentsMargins(0, 0, 0, 0)
         combo_row_layout.addWidget(self.car_combo)
         combo_row_layout.addWidget(self.edit_car_btn)
         combo_row_layout.addWidget(self.duplicate_car_btn)
