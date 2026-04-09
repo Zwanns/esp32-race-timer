@@ -8,6 +8,11 @@ import time
 import re
 import os
 
+try:
+    import winsound
+except ImportError:
+    winsound = None
+
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QLabel, QPushButton,
     QVBoxLayout, QHBoxLayout, QTextEdit, QTableWidget,
@@ -25,7 +30,7 @@ from results_manager import ResultsManager
 from dialogs import AddCarDialog
 
 
-APP_VERSION = "1.2.1"
+APP_VERSION = "1.2.2"
 APP_STAGE = "BETA"
 APP_VERSION_LABEL = f"{APP_VERSION} {APP_STAGE}".strip()
 
@@ -1252,6 +1257,27 @@ class TimerApp(QWidget):
 
         self.log("Система сброшена и готова к новому заезду")
 
+    def play_event_sound(self, event_name):
+        if winsound is None:
+            return
+
+        sound_aliases = {
+            "start": "SystemAsterisk",
+            "finish": "SystemExclamation",
+        }
+
+        sound_alias = sound_aliases.get(event_name)
+        if not sound_alias:
+            return
+
+        try:
+            winsound.PlaySound(
+                sound_alias,
+                winsound.SND_ALIAS | winsound.SND_ASYNC | winsound.SND_NODEFAULT
+            )
+        except RuntimeError:
+            pass
+
     # ===== ОБРАБОТКА СООБЩЕНИЙ ОТ ESP32 =====
     def handle_esp32_message(self, message):
         if message == "CONNECTED":
@@ -1271,6 +1297,7 @@ class TimerApp(QWidget):
             self.save_btn.setEnabled(False)
 
             self.race_start_time = time.time()
+            self.play_event_sound("start")
             self.set_race_style()
             self.live_timer.start(10)
             return
@@ -1279,6 +1306,7 @@ class TimerApp(QWidget):
             self.mode_label.setText("Режим системы: FINISH")
             self.finish_beam.setText("Финишный луч: Triggered")
             self.live_timer.stop()
+            self.play_event_sound("finish")
             self.set_finish_style()
             self.flash_finish()
             return
