@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import (
     QLabel, QLineEdit, QPushButton, QComboBox, QCheckBox, QMessageBox
 )
 from PyQt6.QtCore import Qt
+from car_database import BODY_TOOLTIPS, TYPE_TOOLTIPS, SPECIAL_TOOLTIPS
 
 class AddCarDialog(QDialog):
     def __init__(self, reference_options, existing_cars=None, car_data=None, duplicate_source_data=None, parent=None):
@@ -98,6 +99,7 @@ class AddCarDialog(QDialog):
         body_layout = QVBoxLayout()
         for item in self.reference_options.get("Body", []):
             checkbox = QCheckBox(item)
+            checkbox.setToolTip(BODY_TOOLTIPS.get(item, ""))
             self.body_checkboxes.append(checkbox)
             body_layout.addWidget(checkbox)
         body_layout.addStretch()
@@ -108,6 +110,7 @@ class AddCarDialog(QDialog):
         type_layout = QVBoxLayout()
         for item in self.reference_options.get("Type", []):
             checkbox = QCheckBox(item)
+            checkbox.setToolTip(TYPE_TOOLTIPS.get(item, ""))
             self.type_checkboxes.append(checkbox)
             type_layout.addWidget(checkbox)
         type_layout.addStretch()
@@ -118,6 +121,7 @@ class AddCarDialog(QDialog):
         special_layout = QVBoxLayout()
         for item in self.reference_options.get("Special", []):
             checkbox = QCheckBox(item)
+            checkbox.setToolTip(SPECIAL_TOOLTIPS.get(item, ""))
             self.special_checkboxes.append(checkbox)
             special_layout.addWidget(checkbox)
         special_layout.addStretch()

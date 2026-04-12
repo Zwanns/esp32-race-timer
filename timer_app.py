@@ -23,7 +23,7 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtCore import Qt, QTimer, pyqtSignal
 from PyQt6.QtGui import QFontDatabase, QFont, QColor, QIcon, QPixmap
 
-from car_database import CarDatabase
+from car_database import CarDatabase, BODY_TOOLTIPS, TYPE_TOOLTIPS, SPECIAL_TOOLTIPS
 from network_manager import NetworkManager
 from google_sheets import GoogleSheetsManager
 from results_manager import ResultsManager
@@ -55,14 +55,14 @@ class TimerApp(QWidget):
 
         self.setWindowTitle(f"Hot Wheels Timer v{APP_VERSION_LABEL}")
         self.setWindowIcon(QIcon("timer.ico"))
-        self.setGeometry(200, 200, 1100, 700)
+        self.setGeometry(160, 140, 1320, 760)
 
         # ===== ИЗОБРАЖЕНИЕ МАШИНКИ =====
         self.car_image_label = QLabel("Нет фото")
-        self.car_image_label.setFixedWidth(360)  # Ширина для изображения
+        self.car_image_label.setFixedSize(360, 540)  # Постер 2:3 всегда одного размера
         self.car_image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.car_image_label.setScaledContents(False)  # Масштабируем вручную
-        size_policy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Expanding)
+        size_policy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         self.car_image_label.setSizePolicy(size_policy)
         self.car_image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.car_image_label.setStyleSheet("""
@@ -149,8 +149,11 @@ class TimerApp(QWidget):
         # ===== ГЛАВНЫЙ LAYOUT =====
         main_layout = QHBoxLayout()
 
-        # Левая часть: изображение машинки
-        main_layout.addWidget(self.car_image_label)
+        # Левая часть: постер машинки + информация
+        left_layout = QVBoxLayout()
+        left_layout.setContentsMargins(0, 0, 0, 0)
+        left_layout.setSpacing(16)
+        left_layout.addWidget(self.car_image_label, alignment=Qt.AlignmentFlag.AlignTop)
 
         # Правая часть: остальной интерфейс
         right_layout = QVBoxLayout()
@@ -310,6 +313,7 @@ class TimerApp(QWidget):
         self.type_filter = QComboBox()
         self.type_filter.addItems(self.type_options)
         self.type_filter.setFixedWidth(filter_field_widths[1])
+        self.apply_type_tooltips_to_combo(self.type_filter)
 
         type_filter_block.addWidget(self.type_filter_title)
         type_filter_block.addWidget(self.type_filter)
@@ -324,6 +328,7 @@ class TimerApp(QWidget):
         self.body_filter = QComboBox()
         self.body_filter.addItems(self.body_options)
         self.body_filter.setFixedWidth(filter_field_widths[2])
+        self.apply_body_tooltips_to_combo(self.body_filter)
 
         body_filter_block.addWidget(self.body_filter_title)
         body_filter_block.addWidget(self.body_filter)
@@ -337,6 +342,7 @@ class TimerApp(QWidget):
 
         self.special_filter = QComboBox()
         self.special_filter.addItems(self.special_options)
+        self.apply_special_tooltips_to_combo(self.special_filter)
         self.special_filter.setFixedWidth(filter_field_widths[0])
 
         special_filter_block.addWidget(self.special_filter_title)
@@ -372,8 +378,11 @@ class TimerApp(QWidget):
         # Подключаем сигналы фильтров после их создания
         self.make_filter.currentIndexChanged.connect(self.apply_car_filters)
         self.type_filter.currentIndexChanged.connect(self.apply_car_filters)
+        self.type_filter.currentIndexChanged.connect(self.update_type_filter_tooltip)
         self.body_filter.currentIndexChanged.connect(self.apply_car_filters)
+        self.body_filter.currentIndexChanged.connect(self.update_body_filter_tooltip)
         self.special_filter.currentIndexChanged.connect(self.apply_car_filters)
+        self.special_filter.currentIndexChanged.connect(self.update_special_filter_tooltip)
         self.brand_filter.currentIndexChanged.connect(self.apply_car_filters)
 
         # Кнопка сброса фильтров
@@ -417,8 +426,9 @@ class TimerApp(QWidget):
         self.info_block_title.setStyleSheet("font-size: 16px; font-weight: bold;")
 
         info_grid = QGridLayout()
-        info_grid.setHorizontalSpacing(28)
+        info_grid.setHorizontalSpacing(16)
         info_grid.setVerticalSpacing(14)  # меньше зазор между заголовком и значением (было 18)
+        info_column_width = 110
 
         # Фиксируем пропорции ширины колонок блока Information
         # Числа работают как относительная ширина
@@ -431,37 +441,37 @@ class TimerApp(QWidget):
         self.make_title = QLabel("Make")
         self.make_title.setStyleSheet("font-size: 11px; color: #b0b0b0;")
         self.make_value = QLabel("—")
-        self.make_value.setWordWrap(False)
+        self.make_value.setWordWrap(True)
         self.make_value.setStyleSheet("font-size: 18px; font-weight: bold;")
 
         self.model_title = QLabel("Model")
         self.model_title.setStyleSheet("font-size: 11px; color: #b0b0b0;")
         self.model_value = QLabel("—")
-        self.model_value.setWordWrap(False)
+        self.model_value.setWordWrap(True)
         self.model_value.setStyleSheet("font-size: 18px; font-weight: bold;")
 
         self.color_title = QLabel("Color")
         self.color_title.setStyleSheet("font-size: 11px; color: #b0b0b0;")
         self.color_value = QLabel("—")
-        self.color_value.setWordWrap(False)
+        self.color_value.setWordWrap(True)
         self.color_value.setStyleSheet("font-size: 18px; font-weight: bold;")
 
         self.weight_title = QLabel("Weight")
         self.weight_title.setStyleSheet("font-size: 11px; color: #b0b0b0;")
         self.weight_value = QLabel("—")
-        self.weight_value.setWordWrap(False)
+        self.weight_value.setWordWrap(True)
         self.weight_value.setStyleSheet("font-size: 18px; font-weight: bold;")
 
         self.sku_title = QLabel("SKU")
         self.sku_title.setStyleSheet("font-size: 11px; color: #b0b0b0;")
         self.sku_value = QLabel("—")
-        self.sku_value.setWordWrap(False)
+        self.sku_value.setWordWrap(True)
         self.sku_value.setStyleSheet("font-size: 18px; font-weight: bold;")
 
         self.brand_title = QLabel("Brand")
         self.brand_title.setStyleSheet("font-size: 11px; color: #b0b0b0;")
         self.brand_value = QLabel("—")
-        self.brand_value.setWordWrap(False)
+        self.brand_value.setWordWrap(True)
         self.brand_value.setStyleSheet("font-size: 18px; font-weight: bold;")
 
         # ===== INFORMATION: КОЛОНКИ =====
@@ -473,60 +483,60 @@ class TimerApp(QWidget):
         make_layout = QVBoxLayout(make_cell)
         make_layout.setContentsMargins(0, 0, 0, 0)
         make_layout.setSpacing(2)
-        make_layout.addStretch()
         make_layout.addWidget(self.make_title)
         make_layout.addWidget(self.make_value)
-        make_cell.setFixedHeight(44)
+        make_layout.addStretch()
+        make_cell.setFixedSize(info_column_width, 88)
 
         model_cell = QWidget()
         model_cell.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         model_layout = QVBoxLayout(model_cell)
         model_layout.setContentsMargins(0, 0, 0, 0)
         model_layout.setSpacing(2)
-        model_layout.addStretch()
         model_layout.addWidget(self.model_title)
         model_layout.addWidget(self.model_value)
-        model_cell.setFixedHeight(44)
+        model_layout.addStretch()
+        model_cell.setFixedSize(info_column_width, 88)
 
         color_cell = QWidget()
         color_cell.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         color_layout = QVBoxLayout(color_cell)
         color_layout.setContentsMargins(0, 0, 0, 0)
         color_layout.setSpacing(2)
-        color_layout.addStretch()
         color_layout.addWidget(self.color_title)
         color_layout.addWidget(self.color_value)
-        color_cell.setFixedHeight(44)
+        color_layout.addStretch()
+        color_cell.setFixedSize(info_column_width, 88)
 
         weight_cell = QWidget()
         weight_cell.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         weight_layout = QVBoxLayout(weight_cell)
         weight_layout.setContentsMargins(0, 0, 0, 0)
         weight_layout.setSpacing(2)
-        weight_layout.addStretch()
         weight_layout.addWidget(self.weight_title)
         weight_layout.addWidget(self.weight_value)
-        weight_cell.setFixedHeight(44)
+        weight_layout.addStretch()
+        weight_cell.setFixedSize(info_column_width, 88)
 
         wheel_cell = QWidget()
         wheel_cell.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         wheel_layout = QVBoxLayout(wheel_cell)
         wheel_layout.setContentsMargins(0, 0, 0, 0)
         wheel_layout.setSpacing(2)
-        wheel_layout.addStretch()
         wheel_layout.addWidget(self.sku_title)
         wheel_layout.addWidget(self.sku_value)
-        wheel_cell.setFixedHeight(44)
+        wheel_layout.addStretch()
+        wheel_cell.setFixedSize(info_column_width, 88)
 
         brand_cell = QWidget()
         brand_cell.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         brand_layout = QVBoxLayout(brand_cell)
         brand_layout.setContentsMargins(0, 0, 0, 0)
         brand_layout.setSpacing(2)
-        brand_layout.addStretch()
         brand_layout.addWidget(self.brand_title)
         brand_layout.addWidget(self.brand_value)
-        brand_cell.setFixedHeight(44)
+        brand_layout.addStretch()
+        brand_cell.setFixedSize(info_column_width, 88)
 
         info_grid.addWidget(make_cell, 0, 0)
         info_grid.addWidget(model_cell, 0, 1)
@@ -538,12 +548,14 @@ class TimerApp(QWidget):
 
         info_block_layout.addWidget(self.info_block_title)
         info_block_layout.addLayout(info_grid)
-        info_block_layout.addStretch()
+
+        left_layout.addStretch()
+        left_layout.addLayout(info_block_layout)
+
+        main_layout.addLayout(left_layout)
 
         car_and_info_layout.addSpacing(24)
         car_and_info_layout.addLayout(car_block_layout)
-        car_and_info_layout.addSpacing(40)
-        car_and_info_layout.addLayout(info_block_layout)
         car_and_info_layout.addStretch()
 
         # ===== БЛОК: GOOGLE SHEETS =====
@@ -705,14 +717,17 @@ class TimerApp(QWidget):
 
         self.type_filter.clear()
         self.type_filter.addItems(self.type_options)
+        self.apply_type_tooltips_to_combo(self.type_filter)
         self.type_filter.setCurrentIndex(0)
 
         self.body_filter.clear()
         self.body_filter.addItems(self.body_options)
+        self.apply_body_tooltips_to_combo(self.body_filter)
         self.body_filter.setCurrentIndex(0)
 
         self.special_filter.clear()
         self.special_filter.addItems(self.special_options)
+        self.apply_special_tooltips_to_combo(self.special_filter)
         self.special_filter.setCurrentIndex(0)
 
         self.brand_filter.clear()
@@ -737,6 +752,66 @@ class TimerApp(QWidget):
                 self.car_combo.setCurrentIndex(index)
 
         self.update_car_info_panel()
+
+    def apply_body_tooltips_to_combo(self, combo_box):
+        for index in range(combo_box.count()):
+            item_text = combo_box.itemText(index)
+            if item_text == "All":
+                tooltip_text = "Показать машинки с любым типом кузова."
+            else:
+                tooltip_text = BODY_TOOLTIPS.get(item_text, "")
+
+            if tooltip_text:
+                combo_box.setItemData(index, tooltip_text, Qt.ItemDataRole.ToolTipRole)
+
+        self.update_body_filter_tooltip()
+
+    def update_body_filter_tooltip(self):
+        current_text = self.body_filter.currentText()
+        if current_text == "All":
+            self.body_filter.setToolTip("Показать машинки с любым типом кузова.")
+        else:
+            self.body_filter.setToolTip(BODY_TOOLTIPS.get(current_text, ""))
+
+    def apply_type_tooltips_to_combo(self, combo_box):
+        for index in range(combo_box.count()):
+            item_text = combo_box.itemText(index)
+            if item_text == "All":
+                tooltip_text = "Показать машинки любого класса."
+            else:
+                tooltip_text = TYPE_TOOLTIPS.get(item_text, "")
+
+            if tooltip_text:
+                combo_box.setItemData(index, tooltip_text, Qt.ItemDataRole.ToolTipRole)
+
+        self.update_type_filter_tooltip()
+
+    def update_type_filter_tooltip(self):
+        current_text = self.type_filter.currentText()
+        if current_text == "All":
+            self.type_filter.setToolTip("Показать машинки любого класса.")
+        else:
+            self.type_filter.setToolTip(TYPE_TOOLTIPS.get(current_text, ""))
+
+    def apply_special_tooltips_to_combo(self, combo_box):
+        for index in range(combo_box.count()):
+            item_text = combo_box.itemText(index)
+            if item_text == "All":
+                tooltip_text = "Показать машинки с любой специальной категорией."
+            else:
+                tooltip_text = SPECIAL_TOOLTIPS.get(item_text, "")
+
+            if tooltip_text:
+                combo_box.setItemData(index, tooltip_text, Qt.ItemDataRole.ToolTipRole)
+
+        self.update_special_filter_tooltip()
+
+    def update_special_filter_tooltip(self):
+        current_text = self.special_filter.currentText()
+        if current_text == "All":
+            self.special_filter.setToolTip("Показать машинки с любой специальной категорией.")
+        else:
+            self.special_filter.setToolTip(SPECIAL_TOOLTIPS.get(current_text, ""))
 
     # ===== СЛУЖЕБНАЯ ФУНКЦИЯ: ЛОГ =====
     def resizeEvent(self, event):
