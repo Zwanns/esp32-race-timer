@@ -45,6 +45,33 @@ class CarDatabase:
         self.json_file = json_file
         self.cars_data = self.load_cars_database()
         self.reference_options = self.load_reference_options()
+        self.ensure_reference_metadata_persisted()
+        self.cars_data = self.load_cars_database()
+        self.reference_options = self.load_reference_options()
+
+    def _get_default_reference_options(self):
+        return {
+            "Body": [],
+            "Type": [],
+            "Special": [],
+            "Make": [],
+            "Brand": [],
+            "BodyDescriptions": dict(BODY_TOOLTIPS),
+            "TypeDescriptions": dict(TYPE_TOOLTIPS),
+            "SpecialDescriptions": dict(SPECIAL_TOOLTIPS)
+        }
+
+    def _normalize_description_map(self, values):
+        if not isinstance(values, dict):
+            return {}
+
+        normalized = {}
+        for key, value in values.items():
+            key_text = str(key).strip()
+            value_text = str(value).strip()
+            if key_text:
+                normalized[key_text] = value_text
+        return normalized
 
     def load_cars_database(self):
         try:
@@ -85,12 +112,7 @@ class CarDatabase:
                 data = json.load(file)
 
             if not isinstance(data, list):
-                return {
-                    "Body": [],
-                    "Type": [],
-                    "Special": [],
-                    "Make": []
-                }
+                return self._get_default_reference_options()
 
             # Популярные мировые производители автомобилей
             popular_makes = [
@@ -109,24 +131,37 @@ class CarDatabase:
 
             # Собираем существующие производители из базы данных
             existing_makes = set()
+            existing_brands = set()
             for car in self.cars_data:
                 if isinstance(car, dict):
                     make_value = str(car.get("make", "")).strip()
+                    brand_value = str(car.get("brand", "")).strip()
                     if make_value:
                         existing_makes.add(make_value)
+                    if brand_value:
+                        existing_brands.add(brand_value)
 
             # Объединяем: существующие + популярные, убираем дубликаты
             all_makes = sorted(set(list(existing_makes) + popular_makes), key=lambda x: x.lower())
+            all_brands = sorted(existing_brands, key=lambda x: x.lower())
 
             body_list = []
             type_list = []
             special_list = []
+            brand_list = []
+            body_descriptions = dict(BODY_TOOLTIPS)
+            type_descriptions = dict(TYPE_TOOLTIPS)
+            special_descriptions = dict(SPECIAL_TOOLTIPS)
 
             for item in data:
                 if isinstance(item, dict) and item.get("_meta") == "REFERENCE_OPTIONS":
                     body_list = item.get("Body", [])
                     type_list = item.get("Type", [])
                     special_list = item.get("Special", [])
+                    brand_list = item.get("Brand", [])
+                    body_descriptions.update(self._normalize_description_map(item.get("BodyDescriptions", {})))
+                    type_descriptions.update(self._normalize_description_map(item.get("TypeDescriptions", {})))
+                    special_descriptions.update(self._normalize_description_map(item.get("SpecialDescriptions", {})))
 
                     # На всякий случай приводим к спискам
                     if not isinstance(body_list, list):
@@ -135,23 +170,27 @@ class CarDatabase:
                         type_list = []
                     if not isinstance(special_list, list):
                         special_list = []
+                    if not isinstance(brand_list, list):
+                        brand_list = []
 
                     break
+
+            if not brand_list:
+                brand_list = all_brands
 
             return {
                 "Body": body_list,
                 "Type": type_list,
                 "Special": special_list,
-                "Make": all_makes
+                "Make": all_makes,
+                "Brand": brand_list,
+                "BodyDescriptions": body_descriptions,
+                "TypeDescriptions": type_descriptions,
+                "SpecialDescriptions": special_descriptions
             }
 
         except Exception:
-            return {
-                "Body": [],
-                "Type": [],
-                "Special": [],
-                "Make": []
-            }
+            return self._get_default_reference_options()
 
     def find_car_in_database(self, car_name):
         search_name = car_name.strip().lower()
@@ -259,6 +298,158 @@ class CarDatabase:
 
         except Exception as e:
             print("Ошибка сохранения изменений машинки: " + str(e))
+            return False
+
+    def save_reference_options(self, updated_reference_options, rename_operations=None):
+        try:
+            with open(self.json_file, "r", encoding="utf-8") as file:
+                data = json.load(file)
+
+            if not isinstance(data, list):
+                return False
+
+            normalized_options = {}
+            for key in ("Body", "Type", "Special", "Brand"):
+                raw_values = updated_reference_options.get(key, [])
+                if not isinstance(raw_values, list):
+                    raw_values = []
+
+                cleaned_values = []
+                seen_values = set()
+                for value in raw_values:
+                    text = str(value).strip()
+                    lowered_text = text.lower()
+                    if not text or lowered_text in seen_values:
+                        continue
+                    seen_values.add(lowered_text)
+                    cleaned_values.append(text)
+
+                cleaned_values.sort(key=lambda value: value.lower())
+                normalized_options[key] = cleaned_values
+
+            reference_block = {
+                "_meta": "REFERENCE_OPTIONS",
+                "Body": normalized_options["Body"],
+                "Type": normalized_options["Type"],
+                "Special": normalized_options["Special"],
+                "Brand": normalized_options["Brand"],
+                "BodyDescriptions": self._normalize_description_map(updated_reference_options.get("BodyDescriptions", {})),
+                "TypeDescriptions": self._normalize_description_map(updated_reference_options.get("TypeDescriptions", {})),
+                "SpecialDescriptions": self._normalize_description_map(updated_reference_options.get("SpecialDescriptions", {}))
+            }
+
+            reference_index = -1
+            for index, item in enumerate(data):
+                if isinstance(item, dict) and item.get("_meta") == "REFERENCE_OPTIONS":
+                    reference_index = index
+                    break
+
+            rename_operations = rename_operations or {}
+            for field_name, operations in rename_operations.items():
+                if not isinstance(operations, list):
+                    continue
+
+                for operation in operations:
+                    if not isinstance(operation, (list, tuple)) or len(operation) != 2:
+                        continue
+
+                    old_value = str(operation[0]).strip()
+                    new_value = str(operation[1]).strip()
+                    if not old_value or not new_value:
+                        continue
+
+                    for item in data:
+                        if not isinstance(item, dict) or item.get("_meta") == "REFERENCE_OPTIONS":
+                            continue
+
+                        if field_name == "brand":
+                            current_brand = str(item.get("brand", "")).strip()
+                            if current_brand.lower() == old_value.lower():
+                                item["brand"] = new_value
+                            continue
+
+                        field_values = item.get(field_name, [])
+                        if not isinstance(field_values, list):
+                            field_values = [field_values]
+
+                        updated_values = []
+                        changed = False
+                        seen_values = set()
+
+                        for field_value in field_values:
+                            field_text = str(field_value).strip()
+                            if field_text.lower() == old_value.lower():
+                                field_text = new_value
+                                changed = True
+
+                            lowered_text = field_text.lower()
+                            if field_text and lowered_text not in seen_values:
+                                seen_values.add(lowered_text)
+                                updated_values.append(field_text)
+
+                        if changed:
+                            item[field_name] = updated_values
+
+            if reference_index >= 0:
+                data[reference_index] = reference_block
+            else:
+                data.insert(0, reference_block)
+
+            with open(self.json_file, "w", encoding="utf-8") as file:
+                json.dump(data, file, ensure_ascii=False, indent=2)
+
+            self.reload_data()
+            return True
+
+        except Exception as e:
+            print("Ошибка сохранения справочников: " + str(e))
+            return False
+
+    def ensure_reference_metadata_persisted(self):
+        try:
+            with open(self.json_file, "r", encoding="utf-8") as file:
+                data = json.load(file)
+
+            if not isinstance(data, list):
+                return False
+
+            reference_block = None
+            for item in data:
+                if isinstance(item, dict) and item.get("_meta") == "REFERENCE_OPTIONS":
+                    reference_block = item
+                    break
+
+            if reference_block is None:
+                return False
+
+            changed = False
+
+            if "Brand" not in reference_block:
+                reference_block["Brand"] = list(self.reference_options.get("Brand", []))
+                changed = True
+
+            if "BodyDescriptions" not in reference_block:
+                reference_block["BodyDescriptions"] = dict(self.reference_options.get("BodyDescriptions", {}))
+                changed = True
+
+            if "TypeDescriptions" not in reference_block:
+                reference_block["TypeDescriptions"] = dict(self.reference_options.get("TypeDescriptions", {}))
+                changed = True
+
+            if "SpecialDescriptions" not in reference_block:
+                reference_block["SpecialDescriptions"] = dict(self.reference_options.get("SpecialDescriptions", {}))
+                changed = True
+
+            if not changed:
+                return False
+
+            with open(self.json_file, "w", encoding="utf-8") as file:
+                json.dump(data, file, ensure_ascii=False, indent=2)
+
+            return True
+
+        except Exception as e:
+            print("Ошибка миграции справочников: " + str(e))
             return False
 
     def reload_data(self):

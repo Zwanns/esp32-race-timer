@@ -27,7 +27,7 @@ from car_database import CarDatabase, BODY_TOOLTIPS, TYPE_TOOLTIPS, SPECIAL_TOOL
 from network_manager import NetworkManager
 from google_sheets import GoogleSheetsManager
 from results_manager import ResultsManager
-from dialogs import AddCarDialog
+from dialogs import AddCarDialog, SettingsDialog
 
 
 APP_VERSION = "1.2.4"
@@ -88,6 +88,9 @@ class TimerApp(QWidget):
         # ===== БАЗА МАШИНОК: ЗАГРУЗКА ИЗ JSON =====
         self.cars_data = self.car_db.cars_data
         self.reference_options = self.car_db.reference_options
+        self.body_descriptions = self.reference_options.get("BodyDescriptions", BODY_TOOLTIPS)
+        self.type_descriptions = self.reference_options.get("TypeDescriptions", TYPE_TOOLTIPS)
+        self.special_descriptions = self.reference_options.get("SpecialDescriptions", SPECIAL_TOOLTIPS)
 
 # Справочники фильтров берём из cars.json
         self.body_options = ["All"] + self.reference_options.get("Body", [])
@@ -101,14 +104,8 @@ class TimerApp(QWidget):
             if isinstance(car, dict) and str(car.get("make", "")).strip()
         }, key=lambda x: x.lower())
 
-        brand_values = sorted({
-            str(car.get("brand", "")).strip()
-            for car in self.cars_data
-            if isinstance(car, dict) and str(car.get("brand", "")).strip()
-        }, key=lambda x: x.lower())
-
         self.make_options = ["All"] + make_values
-        self.brand_options = ["All"] + brand_values
+        self.brand_options = ["All"] + self.reference_options.get("Brand", [])
 
         # Полный список имён машин
         self.car_names = [
@@ -274,6 +271,10 @@ class TimerApp(QWidget):
         self.add_car_btn.setFixedWidth(car_panel_width)
         self.add_car_btn.clicked.connect(self.open_add_car_dialog)
 
+        self.settings_btn = QPushButton("Настройки")
+        self.settings_btn.setFixedWidth(car_panel_width)
+        self.settings_btn.clicked.connect(self.open_settings_dialog)
+
         car_block_layout.addWidget(self.car_block_title)
 
         # ===== ФИЛЬТРЫ МАШИНОК =====
@@ -418,6 +419,7 @@ class TimerApp(QWidget):
 
         car_block_layout.addLayout(search_row_layout)
         car_block_layout.addWidget(self.add_car_btn)
+        car_block_layout.addWidget(self.settings_btn)
         car_block_layout.addStretch()
 
         # Правый блок
@@ -676,6 +678,9 @@ class TimerApp(QWidget):
         self.car_db.reload_data()
         self.cars_data = self.car_db.cars_data
         self.reference_options = self.car_db.reference_options
+        self.body_descriptions = self.reference_options.get("BodyDescriptions", BODY_TOOLTIPS)
+        self.type_descriptions = self.reference_options.get("TypeDescriptions", TYPE_TOOLTIPS)
+        self.special_descriptions = self.reference_options.get("SpecialDescriptions", SPECIAL_TOOLTIPS)
 
         # Обновляем справочники фильтров
         self.body_options = ["All"] + self.reference_options.get("Body", [])
@@ -688,14 +693,8 @@ class TimerApp(QWidget):
             if isinstance(car, dict) and str(car.get("make", "")).strip()
         }, key=lambda x: x.lower())
 
-        brand_values = sorted({
-            str(car.get("brand", "")).strip()
-            for car in self.cars_data
-            if isinstance(car, dict) and str(car.get("brand", "")).strip()
-        }, key=lambda x: x.lower())
-
         self.make_options = ["All"] + make_values
-        self.brand_options = ["All"] + brand_values
+        self.brand_options = ["All"] + self.reference_options.get("Brand", [])
 
         self.car_names = [
             car.get("name", "").strip()
@@ -759,7 +758,7 @@ class TimerApp(QWidget):
             if item_text == "All":
                 tooltip_text = "Показать машинки с любым типом кузова."
             else:
-                tooltip_text = BODY_TOOLTIPS.get(item_text, "")
+                tooltip_text = self.body_descriptions.get(item_text, "")
 
             if tooltip_text:
                 combo_box.setItemData(index, tooltip_text, Qt.ItemDataRole.ToolTipRole)
@@ -771,7 +770,7 @@ class TimerApp(QWidget):
         if current_text == "All":
             self.body_filter.setToolTip("Показать машинки с любым типом кузова.")
         else:
-            self.body_filter.setToolTip(BODY_TOOLTIPS.get(current_text, ""))
+            self.body_filter.setToolTip(self.body_descriptions.get(current_text, ""))
 
     def apply_type_tooltips_to_combo(self, combo_box):
         for index in range(combo_box.count()):
@@ -779,7 +778,7 @@ class TimerApp(QWidget):
             if item_text == "All":
                 tooltip_text = "Показать машинки любого класса."
             else:
-                tooltip_text = TYPE_TOOLTIPS.get(item_text, "")
+                tooltip_text = self.type_descriptions.get(item_text, "")
 
             if tooltip_text:
                 combo_box.setItemData(index, tooltip_text, Qt.ItemDataRole.ToolTipRole)
@@ -791,7 +790,7 @@ class TimerApp(QWidget):
         if current_text == "All":
             self.type_filter.setToolTip("Показать машинки любого класса.")
         else:
-            self.type_filter.setToolTip(TYPE_TOOLTIPS.get(current_text, ""))
+            self.type_filter.setToolTip(self.type_descriptions.get(current_text, ""))
 
     def apply_special_tooltips_to_combo(self, combo_box):
         for index in range(combo_box.count()):
@@ -799,7 +798,7 @@ class TimerApp(QWidget):
             if item_text == "All":
                 tooltip_text = "Показать машинки с любой специальной категорией."
             else:
-                tooltip_text = SPECIAL_TOOLTIPS.get(item_text, "")
+                tooltip_text = self.special_descriptions.get(item_text, "")
 
             if tooltip_text:
                 combo_box.setItemData(index, tooltip_text, Qt.ItemDataRole.ToolTipRole)
@@ -811,7 +810,7 @@ class TimerApp(QWidget):
         if current_text == "All":
             self.special_filter.setToolTip("Показать машинки с любой специальной категорией.")
         else:
-            self.special_filter.setToolTip(SPECIAL_TOOLTIPS.get(current_text, ""))
+            self.special_filter.setToolTip(self.special_descriptions.get(current_text, ""))
 
     # ===== СЛУЖЕБНАЯ ФУНКЦИЯ: ЛОГ =====
     def resizeEvent(self, event):
@@ -1118,6 +1117,32 @@ class TimerApp(QWidget):
                 "Готово",
                 f'Машинка "{new_car_data["name"]}" добавлена в базу'
             )
+
+    # ===== НАСТРОЙКИ: ОТКРЫТЬ ОКНО СПРАВОЧНИКОВ =====
+    def open_settings_dialog(self):
+        dialog = SettingsDialog(
+            reference_options=self.reference_options,
+            existing_cars=self.car_db.cars_data,
+            parent=self
+        )
+
+        if not dialog.exec():
+            return
+
+        updated_reference_options = dialog.get_reference_options()
+        if not updated_reference_options:
+            return
+
+        if not self.car_db.save_reference_options(
+            updated_reference_options,
+            rename_operations=dialog.get_rename_operations()
+        ):
+            QMessageBox.warning(self, "Ошибка", "Не удалось сохранить настройки")
+            return
+
+        self.reload_cars_data_and_filters(self.resolve_car_name())
+        self.log("Справочники настроек обновлены")
+        QMessageBox.information(self, "Готово", "Настройки успешно сохранены")
 
     # ===== АВТО: ОТКРЫТЬ ОКНО ДУБЛИРОВАНИЯ =====
     def open_duplicate_car_dialog(self):

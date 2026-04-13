@@ -2,42 +2,84 @@
   {
     "_meta": "REFERENCE_OPTIONS",
     "Body": [
-      "Sedan",
-      "Hatchback",
-      "Wagon",
-      "Pickup",
-      "Coupe",
+      "Bolid",
       "Convertible",
+      "Coupe",
       "Fastback",
-      "Shooting Brake",
+      "Hatchback",
       "Liftback",
-      "Formula 1"
+      "Pickup",
+      "Sedan",
+      "Shooting Brake",
+      "Wagon"
     ],
     "Type": [
       "City Car",
-      "Sports Car",
-      "Muscle Car",
-      "Supercar",
-      "Hypercar",
-      "Open Wheel",
       "GT",
+      "Hypercar",
+      "Muscle Car",
+      "Open Wheel",
+      "Prototype",
       "Rally",
-      "Touring Car",
-      "Prototype"
+      "Sports Car",
+      "Supercar",
+      "Touring Car"
     ],
     "Special": [
+      "Advan Racing Livery",
+      "Borla Livery",
+      "Classic",
+      "Falken Livery",
+      "Gulf Livery",
+      "Police Car",
+      "Retro",
+      "Streat Racing",
       "Track-only",
       "Tuned",
-      "Urban Outlaw",
-      "Classic",
-      "Retro",
-      "Gulf Livery",
-      "Falken Livery",
-      "Borla Livery",
-      "Advan Racing Livery",
-      "Streat Racing",
-      "Police"
-    ]
+      "Urban Outlaw"
+    ],
+    "Brand": [
+      "Hot Wheels",
+      "Majorette",
+      "Matchbox"
+    ],
+    "BodyDescriptions": {
+      "Bolid": "Одноместный открытый кузов болида с вынесенными колесами.",
+      "Convertible": "Открытый кузов со складной или съемной крышей.",
+      "Coupe": "Обычно 2-дверный кузов со спортивным силуэтом.",
+      "Fastback": "Крыша плавно уходит назад одной линией до хвоста машины.",
+      "Hatchback": "Короткий кузов с задней подъемной дверью и общим салоном с багажником.",
+      "Liftback": "Похож на седан, но задняя дверь поднимается вместе со стеклом.",
+      "Pickup": "Грузовая платформа сзади и отдельная кабина спереди, как у пикапа.",
+      "Sedan": "Классический закрытый кузов с 4 дверями и отдельным багажником.",
+      "Shooting Brake": "Спортивное купе с удлиненной задней частью, смесь купе и универсала.",
+      "Wagon": "Удлиненный кузов с увеличенным багажным отсеком, как у универсала."
+    },
+    "TypeDescriptions": {
+      "City Car": "Компактная городская машина для повседневной езды.",
+      "GT": "Гоночный или дорожный grand tourer для скорости на длинных дистанциях.",
+      "Hypercar": "Экстремально быстрый и технологичный автомобиль выше уровня supercar.",
+      "Muscle Car": "Мощное американское купе или седан с большим мотором.",
+      "Open Wheel": "Гоночная машина с открытыми колесами, как у формульных серий.",
+      "Prototype": "Специально построенный гоночный автомобиль, не основанный на серийной модели.",
+      "Rally": "Машина, подготовленная для раллийных трасс и смешанных покрытий.",
+      "Sports Car": "Легковая спортивная машина с акцентом на управляемость и скорость.",
+      "Supercar": "Очень быстрый и дорогой спортивный автомобиль высокого класса.",
+      "Touring Car": "Силуэтная гоночная машина, близкая по форме к серийным авто."
+    },
+    "SpecialDescriptions": {
+      "Advan Racing Livery": "Окраска в фирменном гоночном стиле Advan Racing.",
+      "Borla Livery": "Окраска в стиле гоночной ливреи Borla.",
+      "Classic": "Классическая модель, ценимая за возраст, стиль и исторический характер.",
+      "Falken Livery": "Окраска в фирменной гоночной ливрее Falken.",
+      "Gulf Livery": "Окраска в знаменитой гоночной ливрее Gulf.",
+      "Police Car": "Полицейская версия или стилизация под служебный автомобиль.",
+      "Retro": "Автомобиль с ярко выраженной стилистикой прошлых десятилетий.",
+      "Streat Racing": "Автомобиль в духе уличных гонок, с акцентом на скорость, стиль и дорожный характер.",
+      "Track-only": "Версия, созданная в первую очередь для трека и максимальной скорости на трассе.",
+      "Tuned": "Модифицированный автомобиль с доработками внешности, шасси или двигателя.",
+      "Urban Outlaw": "Харизматичный дорожный проект в стиле restomod или кастомной городской легенды."
+    }
   },
   {
     "name": "Alfa Romeo Duetto '67 - Red",
@@ -1335,7 +1377,7 @@
     "sku": "MM035",
     "image": "car_images/MM035.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Open Wheel"
@@ -1354,7 +1396,7 @@
     "sku": "MM033",
     "image": "car_images/MM033.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Open Wheel"
@@ -1373,7 +1415,7 @@
     "sku": "MM032",
     "image": "car_images/MM032.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Open Wheel"
@@ -1392,7 +1434,7 @@
     "sku": "MM034",
     "image": "car_images/MM034.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Open Wheel"
@@ -1411,7 +1453,7 @@
     "sku": "NN031",
     "image": "car_images/NN031.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Open Wheel"
@@ -1517,7 +1559,7 @@
     ],
     "Special": [
       "Classic",
-      "Police"
+      "Police Car"
     ]
   },
   {
@@ -2169,7 +2211,7 @@
     ],
     "Special": [
       "Classic",
-      "Police"
+      "Police Car"
     ]
   },
   {
@@ -2189,7 +2231,7 @@
     ],
     "Special": [
       "Classic",
-      "Police"
+      "Police Car"
     ]
   },
   {
@@ -2222,7 +2264,7 @@
     "sku": "HTD99",
     "image": "car_images/HTD99.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Sports Car"
@@ -2242,7 +2284,7 @@
     "sku": "HYX18",
     "image": "car_images/HYX18.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Sports Car"
@@ -2262,7 +2304,7 @@
     "sku": "KK025",
     "image": "car_images/KK025.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Sports Car"
@@ -2281,7 +2323,7 @@
     "sku": "kk023",
     "image": "car_images/kk023.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Sports Car"
@@ -2300,7 +2342,7 @@
     "sku": "kk021",
     "image": "car_images/kk021.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Sports Car"
@@ -2319,7 +2361,7 @@
     "sku": "kk022",
     "image": "car_images/kk022.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Sports Car"
@@ -2338,7 +2380,7 @@
     "sku": "kk024",
     "image": "car_images/kk024.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "Sports Car"
@@ -4209,7 +4251,7 @@
     "sku": "ghd95",
     "image": "car_images/ghd95.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "GT"
@@ -4228,7 +4270,7 @@
     "sku": "ghb49",
     "image": "car_images/ghb49.webp",
     "Body": [
-      "Formula 1"
+      "Bolid"
     ],
     "Type": [
       "GT"
@@ -4276,7 +4318,7 @@
     ],
     "Special": [
       "Classic",
-      "Police"
+      "Police Car"
     ]
   },
   {
@@ -4296,7 +4338,7 @@
     ],
     "Special": [
       "Classic",
-      "Police"
+      "Police Car"
     ]
   },
   {
@@ -5157,7 +5199,7 @@
     ],
     "Special": [
       "Classic",
-      "Police"
+      "Police Car"
     ]
   },
   {
@@ -5342,7 +5384,7 @@
     ],
     "Special": [
       "Classic",
-      "Police"
+      "Police Car"
     ]
   },
   {
