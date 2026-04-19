@@ -31,8 +31,8 @@ from results_manager import ResultsManager
 from dialogs import AddCarDialog, SettingsDialog
 
 
-APP_VERSION = "1.2.5"
-APP_STAGE = "BETA"
+APP_VERSION = "1.2.6"
+APP_STAGE = ""
 APP_VERSION_LABEL = f"{APP_VERSION} {APP_STAGE}".strip()
 
 class TimerApp(QWidget):
