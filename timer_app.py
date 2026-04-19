@@ -18,6 +18,7 @@ from PyQt6.QtWidgets import (
     QVBoxLayout, QHBoxLayout, QTextEdit, QTableWidget,
     QTableWidgetItem, QGroupBox, QGridLayout,
     QHeaderView, QLineEdit, QMessageBox, QComboBox, QCheckBox,
+    QFileDialog,
     QSizePolicy, QDialog
 )
 from PyQt6.QtCore import Qt, QTimer, pyqtSignal
@@ -30,7 +31,7 @@ from results_manager import ResultsManager
 from dialogs import AddCarDialog, SettingsDialog
 
 
-APP_VERSION = "1.2.4"
+APP_VERSION = "1.2.5"
 APP_STAGE = "BETA"
 APP_VERSION_LABEL = f"{APP_VERSION} {APP_STAGE}".strip()
 
@@ -275,6 +276,14 @@ class TimerApp(QWidget):
         self.settings_btn.setFixedWidth(car_panel_width)
         self.settings_btn.clicked.connect(self.open_settings_dialog)
 
+        self.export_excel_btn = QPushButton("Экспорт базы в Excel")
+        self.export_excel_btn.setFixedWidth(car_panel_width)
+        self.export_excel_btn.clicked.connect(self.export_cars_to_excel)
+
+        self.import_excel_btn = QPushButton("Импорт базы из Excel")
+        self.import_excel_btn.setFixedWidth(car_panel_width)
+        self.import_excel_btn.clicked.connect(self.import_cars_from_excel)
+
         car_block_layout.addWidget(self.car_block_title)
 
         # ===== ФИЛЬТРЫ МАШИНОК =====
@@ -420,6 +429,8 @@ class TimerApp(QWidget):
         car_block_layout.addLayout(search_row_layout)
         car_block_layout.addWidget(self.add_car_btn)
         car_block_layout.addWidget(self.settings_btn)
+        car_block_layout.addWidget(self.export_excel_btn)
+        car_block_layout.addWidget(self.import_excel_btn)
         car_block_layout.addStretch()
 
         # Правый блок
@@ -1143,6 +1154,62 @@ class TimerApp(QWidget):
         self.reload_cars_data_and_filters(self.resolve_car_name())
         self.log("Справочники настроек обновлены")
         QMessageBox.information(self, "Готово", "Настройки успешно сохранены")
+
+    def export_cars_to_excel(self):
+        default_path = os.path.join(os.getcwd(), "cars_export.xlsx")
+        file_path, _ = QFileDialog.getSaveFileName(
+            self,
+            "Экспорт базы машин",
+            default_path,
+            "Excel Workbook (*.xlsx);;Excel XML 2003 (*.xml)"
+        )
+
+        if not file_path:
+            return
+
+        if not file_path.lower().endswith((".xlsx", ".xml")):
+            file_path += ".xlsx"
+
+        success, message = self.car_db.export_to_excel_file(file_path)
+        if not success:
+            QMessageBox.warning(self, "Ошибка экспорта", message)
+            return
+
+        self.log(f"База машин экспортирована в Excel: {file_path}")
+        QMessageBox.information(self, "Экспорт завершён", message)
+
+    def import_cars_from_excel(self):
+        file_path, _ = QFileDialog.getOpenFileName(
+            self,
+            "Импорт базы машин",
+            os.getcwd(),
+            "Excel Files (*.xlsx *.xml);;Excel Workbook (*.xlsx);;Excel XML 2003 (*.xml)"
+        )
+
+        if not file_path:
+            return
+
+        reply = QMessageBox.question(
+            self,
+            "Подтверждение импорта",
+            "Импорт добавит новые машинки из Excel-файла в текущую базу.\n"
+            "Если машинка уже существует, программа обновит её по SKU.\n\n"
+            "Перед импортом программа создаст резервную копию текущего cars.json.\n\n"
+            "Продолжить?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+        if reply != QMessageBox.StandardButton.Yes:
+            return
+
+        success, message = self.car_db.import_from_excel_file(file_path)
+        if not success:
+            QMessageBox.warning(self, "Ошибка импорта", message)
+            return
+
+        self.reload_cars_data_and_filters()
+        self.log(f"База машин импортирована из Excel: {file_path}")
+        QMessageBox.information(self, "Импорт завершён", message)
 
     # ===== АВТО: ОТКРЫТЬ ОКНО ДУБЛИРОВАНИЯ =====
     def open_duplicate_car_dialog(self):
