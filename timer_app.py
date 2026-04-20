@@ -249,13 +249,13 @@ class TimerApp(QWidget):
         self.car_combo.setFixedWidth(combo_field_width)
         self.car_combo.currentIndexChanged.connect(self.on_car_selection_changed)
 
-        self.edit_car_btn = QPushButton("✎")
-        self.edit_car_btn.setFixedSize(34, 34)
+        self.edit_car_btn = QPushButton("Редактировать")
+        self.edit_car_btn.setFixedHeight(34)
         self.edit_car_btn.setToolTip("Редактировать выбранную машинку")
         self.edit_car_btn.clicked.connect(self.open_edit_car_dialog)
 
-        self.duplicate_car_btn = QPushButton("⧉")
-        self.duplicate_car_btn.setFixedSize(34, 34)
+        self.duplicate_car_btn = QPushButton("Дублировать")
+        self.duplicate_car_btn.setFixedHeight(34)
         self.duplicate_car_btn.setToolTip("Дублировать выбранную машинку")
         self.duplicate_car_btn.clicked.connect(self.open_duplicate_car_dialog)
 
@@ -269,12 +269,12 @@ class TimerApp(QWidget):
         self.car_sku_search_input.setFixedWidth(sku_search_width)
         self.car_sku_search_input.textChanged.connect(self.apply_car_filters)
 
-        self.add_car_btn = QPushButton("Создать новое авто")
-        self.add_car_btn.setFixedWidth(car_panel_width)
+        self.add_car_btn = QPushButton("+")
+        self.add_car_btn.setToolTip("Создать новое авто")
+        self.add_car_btn.setFixedSize(sku_search_width, 34)
         self.add_car_btn.clicked.connect(self.open_add_car_dialog)
 
         self.settings_btn = QPushButton("Настройки")
-        self.settings_btn.setFixedWidth(car_panel_width)
         self.settings_btn.clicked.connect(self.open_settings_dialog)
 
         self.export_excel_btn = QPushButton("Экспорт базы в Excel")
@@ -415,8 +415,7 @@ class TimerApp(QWidget):
         combo_row_layout.setSpacing(combo_row_spacing)
         combo_row_layout.setContentsMargins(0, 0, 0, 0)
         combo_row_layout.addWidget(self.car_combo)
-        combo_row_layout.addWidget(self.edit_car_btn)
-        combo_row_layout.addWidget(self.duplicate_car_btn)
+        combo_row_layout.addWidget(self.add_car_btn)
 
         search_row_layout = QHBoxLayout()
         search_row_layout.setSpacing(search_row_spacing)
@@ -424,21 +423,22 @@ class TimerApp(QWidget):
         search_row_layout.addWidget(self.car_search_input)
         search_row_layout.addWidget(self.car_sku_search_input)
 
-        car_block_layout.addWidget(self.add_car_btn)
-        car_block_layout.addWidget(self.settings_btn)
         car_block_layout.addWidget(self.export_excel_btn)
         car_block_layout.addWidget(self.import_excel_btn)
         car_block_layout.addStretch()
 
         # Правый блок
         info_block_layout = QVBoxLayout()
+        info_block_layout.setSpacing(4)
         self.info_block_title = QLabel("Information")
         self.info_block_title.setStyleSheet("font-size: 16px; font-weight: bold;")
 
         info_grid = QGridLayout()
         info_grid.setHorizontalSpacing(16)
-        info_grid.setVerticalSpacing(14)  # меньше зазор между заголовком и значением (было 18)
+        info_grid.setVerticalSpacing(8)
         info_column_width = 110
+        info_top_row_height = 104
+        info_bottom_row_height = 52
 
         # Фиксируем пропорции ширины колонок блока Information
         # Числа работают как относительная ширина
@@ -496,7 +496,7 @@ class TimerApp(QWidget):
         make_layout.addWidget(self.make_title)
         make_layout.addWidget(self.make_value)
         make_layout.addStretch()
-        make_cell.setFixedSize(info_column_width, 88)
+        make_cell.setFixedSize(info_column_width, info_top_row_height)
 
         model_cell = QWidget()
         model_cell.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
@@ -506,7 +506,7 @@ class TimerApp(QWidget):
         model_layout.addWidget(self.model_title)
         model_layout.addWidget(self.model_value)
         model_layout.addStretch()
-        model_cell.setFixedSize(info_column_width, 88)
+        model_cell.setFixedSize(info_column_width, info_top_row_height)
 
         color_cell = QWidget()
         color_cell.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
@@ -516,7 +516,7 @@ class TimerApp(QWidget):
         color_layout.addWidget(self.color_title)
         color_layout.addWidget(self.color_value)
         color_layout.addStretch()
-        color_cell.setFixedSize(info_column_width, 88)
+        color_cell.setFixedSize(info_column_width, info_top_row_height)
 
         weight_cell = QWidget()
         weight_cell.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
@@ -526,7 +526,7 @@ class TimerApp(QWidget):
         weight_layout.addWidget(self.weight_title)
         weight_layout.addWidget(self.weight_value)
         weight_layout.addStretch()
-        weight_cell.setFixedSize(info_column_width, 88)
+        weight_cell.setFixedSize(info_column_width, info_bottom_row_height)
 
         wheel_cell = QWidget()
         wheel_cell.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
@@ -536,7 +536,7 @@ class TimerApp(QWidget):
         wheel_layout.addWidget(self.sku_title)
         wheel_layout.addWidget(self.sku_value)
         wheel_layout.addStretch()
-        wheel_cell.setFixedSize(info_column_width, 88)
+        wheel_cell.setFixedSize(info_column_width, info_bottom_row_height)
 
         brand_cell = QWidget()
         brand_cell.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
@@ -546,7 +546,7 @@ class TimerApp(QWidget):
         brand_layout.addWidget(self.brand_title)
         brand_layout.addWidget(self.brand_value)
         brand_layout.addStretch()
-        brand_cell.setFixedSize(info_column_width, 88)
+        brand_cell.setFixedSize(info_column_width, info_bottom_row_height)
 
         info_grid.addWidget(make_cell, 0, 0)
         info_grid.addWidget(model_cell, 0, 1)
@@ -563,8 +563,19 @@ class TimerApp(QWidget):
         selection_block_layout.addLayout(combo_row_layout)
         selection_block_layout.addLayout(search_row_layout)
 
-        info_block_layout.addWidget(self.info_block_title)
+        card_actions_layout = QHBoxLayout()
+        card_actions_layout.setSpacing(8)
+        card_actions_layout.setContentsMargins(0, 0, 0, 0)
+        card_actions_layout.addWidget(self.edit_car_btn, 1)
+        card_actions_layout.addWidget(self.duplicate_car_btn, 1)
+
+        card_actions_container = QWidget()
+        card_actions_container.setFixedWidth(left_selection_width)
+        card_actions_container.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        card_actions_container.setLayout(card_actions_layout)
+
         info_block_layout.addLayout(info_grid)
+        info_block_layout.addWidget(card_actions_container, alignment=Qt.AlignmentFlag.AlignLeft)
 
         left_layout.addLayout(selection_block_layout)
         left_layout.addLayout(info_block_layout)
@@ -626,8 +637,14 @@ class TimerApp(QWidget):
         self.logs.setReadOnly(True)
         self.logs.append(f"Программа запущена. Версия {APP_VERSION_LABEL}")
 
+        logs_actions_layout = QHBoxLayout()
+        logs_actions_layout.setSpacing(8)
+        logs_actions_layout.setContentsMargins(0, 0, 0, 0)
+        logs_actions_layout.addWidget(self.settings_btn, 1)
+        logs_actions_layout.addWidget(self.about_btn, 1)
+
         logs_layout.addWidget(self.logs)
-        logs_layout.addWidget(self.about_btn)  # кнопка под логами
+        logs_layout.addLayout(logs_actions_layout)
 
         logs_box.setLayout(logs_layout)
 
