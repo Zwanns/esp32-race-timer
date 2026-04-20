@@ -233,12 +233,13 @@ class TimerApp(QWidget):
         self.car_block_title.setStyleSheet("font-size: 16px; font-weight: bold;")
 
         car_panel_width = 454
+        left_selection_width = self.car_image_label.width()
         combo_action_btn_width = 34
         combo_row_spacing = 6
-        combo_field_width = car_panel_width - (combo_action_btn_width * 2) - (combo_row_spacing * 2)
-        search_row_spacing = 10
-        name_search_width = 332
-        sku_search_width = car_panel_width - name_search_width - search_row_spacing
+        combo_field_width = left_selection_width - (combo_action_btn_width * 2) - (combo_row_spacing * 2)
+        search_row_spacing = combo_row_spacing
+        name_search_width = combo_field_width
+        sku_search_width = (combo_action_btn_width * 2) + combo_row_spacing
         filter_row_spacing = 10
         filter_field_widths = [145, 144, 145]
 
@@ -283,8 +284,6 @@ class TimerApp(QWidget):
         self.import_excel_btn = QPushButton("Импорт базы из Excel")
         self.import_excel_btn.setFixedWidth(car_panel_width)
         self.import_excel_btn.clicked.connect(self.import_cars_from_excel)
-
-        car_block_layout.addWidget(self.car_block_title)
 
         # ===== ФИЛЬТРЫ МАШИНОК =====
         filters_main_layout = QVBoxLayout()
@@ -419,14 +418,12 @@ class TimerApp(QWidget):
         combo_row_layout.addWidget(self.edit_car_btn)
         combo_row_layout.addWidget(self.duplicate_car_btn)
 
-        car_block_layout.addLayout(combo_row_layout)
         search_row_layout = QHBoxLayout()
         search_row_layout.setSpacing(search_row_spacing)
         search_row_layout.setContentsMargins(0, 0, 0, 0)
         search_row_layout.addWidget(self.car_search_input)
         search_row_layout.addWidget(self.car_sku_search_input)
 
-        car_block_layout.addLayout(search_row_layout)
         car_block_layout.addWidget(self.add_car_btn)
         car_block_layout.addWidget(self.settings_btn)
         car_block_layout.addWidget(self.export_excel_btn)
@@ -559,11 +556,19 @@ class TimerApp(QWidget):
         info_grid.addWidget(wheel_cell, 1, 1)
         info_grid.addWidget(brand_cell, 1, 2)
 
+        selection_block_layout = QVBoxLayout()
+        selection_block_layout.setSpacing(8)
+        selection_block_layout.setContentsMargins(0, 0, 0, 0)
+        selection_block_layout.addWidget(self.car_block_title)
+        selection_block_layout.addLayout(combo_row_layout)
+        selection_block_layout.addLayout(search_row_layout)
+
         info_block_layout.addWidget(self.info_block_title)
         info_block_layout.addLayout(info_grid)
 
-        left_layout.addStretch()
+        left_layout.addLayout(selection_block_layout)
         left_layout.addLayout(info_block_layout)
+        left_layout.addStretch()
 
         main_layout.addLayout(left_layout)
 
