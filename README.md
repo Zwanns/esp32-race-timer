@@ -66,6 +66,28 @@ Install dependencies and run:
 python timer_app.py
 ```
 
+## Building Windows EXE
+
+Install PyInstaller once:
+
+```powershell
+python -m pip install pyinstaller
+```
+
+Then build the app:
+
+```powershell
+.\build_exe.ps1
+```
+
+The executable will be created here:
+
+```text
+dist\HotWheelsTimer\HotWheelsTimer.exe
+```
+
+Keep the whole `dist\HotWheelsTimer` folder together, because it contains the database, sounds, fonts, and car images used by the app.
+
 ## Notes
 
 - `new cars.xlsx` is kept local and is not part of the repository

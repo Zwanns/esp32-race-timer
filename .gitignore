@@ -1,3 +1,6 @@
 __pycache__/
 *.py[cod]
 car_images/*.webp
+build/
+dist/
+*.spec
