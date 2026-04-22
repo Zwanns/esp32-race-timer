@@ -6665,6 +6665,7 @@
     "make": "Porsche",
     "model": "911 Polizei '71",
     "color": "White",
+    "weight_g": 30.9,
     "brand": "Hot Wheels",
     "sku": "fys80",
     "image": "car_images/fys80.webp",
@@ -6677,8 +6678,7 @@
     "Special": [
       "Classic",
       "Police Car"
-    ],
-    "weight_g": 30.9
+    ]
   },
   {
     "name": "Porsche 934.5 - Blue",
@@ -6746,6 +6746,7 @@
     "make": "Porsche",
     "model": "935",
     "color": "White",
+    "weight_g": 38.6,
     "brand": "Hot Wheels",
     "sku": "grx60",
     "image": "car_images/grx60.webp",
@@ -6753,13 +6754,12 @@
       "Coupe"
     ],
     "Type": [
-      "Sports Car",
-      "GT"
+      "Sports Car"
     ],
     "Special": [
-      "Track-only"
-    ],
-    "weight_g": 38.6
+      "Streat Racing",
+      "Urban Outlaw"
+    ]
   },
   {
     "name": "Porsche 993 GT2 - Red",
