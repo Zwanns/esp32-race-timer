@@ -7104,5 +7104,403 @@
       "Streat Racing"
     ],
     "weight_g": 33.3
+  },
+  {
+    "name": "Porsche 911 GT3 - Shark Blue",
+    "make": "Porsche",
+    "model": "911 GT3",
+    "color": "Shark Blue",
+    "brand": "Hot Wheels",
+    "sku": "hct22",
+    "image": "car_images/hct22.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [],
+    "weight_g": 33.7
+  },
+  {
+    "name": "Volkswagen Golf MK2 - Metalflake Dark Blue",
+    "make": "Volkswagen",
+    "model": "Golf MK2",
+    "color": "Metalflake Dark Blue",
+    "brand": "Hot Wheels",
+    "sku": "fyf76",
+    "image": "car_images/fyf76.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "City Car"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 33
+  },
+  {
+    "name": "Dodge Dart '68 - Metalflake Red",
+    "make": "Dodge",
+    "model": "Dart '68",
+    "color": "Metalflake Red",
+    "brand": "Hot Wheels",
+    "sku": "htd65",
+    "image": "car_images/htd65.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 33.6
+  },
+  {
+    "name": "Audi R8 Spyder - Dynamite Red",
+    "make": "Audi",
+    "model": "R8 Spyder",
+    "color": "Dynamite Red",
+    "brand": "Hot Wheels",
+    "sku": "ghf93",
+    "image": "car_images/ghf93.webp",
+    "Body": [
+      "Convertible"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [],
+    "weight_g": 31.6
+  },
+  {
+    "name": "Audi R8 Spyder - Ibis White",
+    "make": "Audi",
+    "model": "R8 Spyder",
+    "color": "Ibis White",
+    "brand": "Hot Wheels",
+    "sku": "ghb28",
+    "image": "car_images/ghb28.webp",
+    "Body": [
+      "Convertible"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [],
+    "weight_g": 31.3
+  },
+  {
+    "name": "Audi R8 '07 - Dark Gray",
+    "make": "Audi",
+    "model": "R8 '07",
+    "color": "Dark Gray",
+    "brand": "Matchbox",
+    "sku": "gkk87",
+    "image": "car_images/gkk87.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [],
+    "weight_g": 33.1
+  },
+  {
+    "name": "Mercedes-Benz AMG GT3 '16 - Yellow",
+    "make": "Mercedes",
+    "model": "AMG GT3 '16",
+    "color": "Yellow",
+    "brand": "Hot Wheels",
+    "sku": "fyd19",
+    "image": "car_images/fyd19.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT"
+    ],
+    "Special": [
+      "Track-only"
+    ],
+    "weight_g": 39.1
+  },
+  {
+    "name": "Mercedes-Benz AMG GT3 '16 - Light Blue",
+    "make": "Mercedes",
+    "model": "AMG GT3 '16",
+    "color": "Light Blue",
+    "brand": "Hot Wheels",
+    "sku": "fyd75",
+    "image": "car_images/fyd75.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT"
+    ],
+    "Special": [
+      "Track-only"
+    ],
+    "weight_g": 39.8
+  },
+  {
+    "name": "Mercedes-Benz AMG GT3 '16 - Dark Candy Blue",
+    "make": "Mercedes",
+    "model": "AMG GT3 '16",
+    "color": "Dark Candy Blue",
+    "brand": "Hot Wheels",
+    "sku": "fjy10",
+    "image": "car_images/fjy10.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT"
+    ],
+    "Special": [
+      "Track-only"
+    ],
+    "weight_g": 39.8
+  },
+  {
+    "name": "BMW Z4 M - Black",
+    "make": "BMW",
+    "model": "Z4 M",
+    "color": "Black",
+    "brand": "Hot Wheels",
+    "sku": "v5613",
+    "image": "car_images/v5613.webp",
+    "Body": [
+      "Convertible"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [],
+    "weight_g": 34.6
+  },
+  {
+    "name": "BMW M3 GT2 - White",
+    "make": "BMW",
+    "model": "M3 GT2",
+    "color": "White",
+    "brand": "Hot Wheels",
+    "sku": "gtc82",
+    "image": "car_images/gtc82.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT"
+    ],
+    "Special": [
+      "Track-only"
+    ],
+    "weight_g": 34
+  },
+  {
+    "name": "BMW M3 GT2 - Red",
+    "make": "BMW",
+    "model": "M3 GT2",
+    "color": "Red",
+    "brand": "Hot Wheels",
+    "sku": "grx89",
+    "image": "car_images/grx89.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT"
+    ],
+    "Special": [
+      "Track-only"
+    ],
+    "weight_g": 36.2
+  },
+  {
+    "name": "Ford GT40 Mk.IV '67 - Metalflake Dark Green",
+    "make": "Ford",
+    "model": "GT40 Mk.IV '67",
+    "color": "Metalflake Dark Green",
+    "brand": "Hot Wheels",
+    "sku": "htc69",
+    "image": "car_images/htc69.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Prototype"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 33
+  },
+  {
+    "name": "Ford GT '17 - Red",
+    "make": "Ford",
+    "model": "GT '17",
+    "color": "Red",
+    "brand": "Majorette",
+    "sku": "204b",
+    "image": "car_images/204b.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [],
+    "weight_g": 29.4
+  },
+  {
+    "name": "Ford GT '17 - Blue",
+    "make": "Ford",
+    "model": "GT '17",
+    "color": "Blue",
+    "brand": "Hot Wheels",
+    "sku": "hcw47",
+    "image": "car_images/hcw47.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [],
+    "weight_g": 37.2
+  },
+  {
+    "name": "Ford GT '17 - White",
+    "make": "Ford",
+    "model": "GT '17",
+    "color": "White",
+    "brand": "Hot Wheels",
+    "sku": "gtb38",
+    "image": "car_images/gtb38.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [],
+    "weight_g": 37.1
+  },
+  {
+    "name": "Ford GT LM - Green",
+    "make": "Ford",
+    "model": "GT LM",
+    "color": "Green",
+    "brand": "Hot Wheels",
+    "sku": "r7582",
+    "image": "car_images/r7582.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT"
+    ],
+    "Special": [
+      "Track-only"
+    ],
+    "weight_g": 34.8
+  },
+  {
+    "name": "Ford GT-40 - White",
+    "make": "Ford",
+    "model": "GT-40",
+    "color": "White",
+    "brand": "Hot Wheels",
+    "sku": "gtb33",
+    "image": "car_images/gtb33.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Prototype"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 33.7
+  },
+  {
+    "name": "Ford GT Race '16 - Black",
+    "make": "Ford",
+    "model": "GT Race '16",
+    "color": "Black",
+    "brand": "Hot Wheels",
+    "sku": "gtb52",
+    "image": "car_images/gtb52.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT"
+    ],
+    "Special": [
+      "Track-only"
+    ],
+    "weight_g": 32.6
+  },
+  {
+    "name": "Ford GT Race '16 - Metalflake Silver",
+    "make": "Ford",
+    "model": "GT Race '16",
+    "color": "Metalflake Silver",
+    "brand": "Hot Wheels",
+    "sku": "gry40",
+    "image": "car_images/gry40.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT"
+    ],
+    "Special": [
+      "Track-only"
+    ],
+    "weight_g": 31.8
+  },
+  {
+    "name": "Ford GT - White",
+    "make": "Ford",
+    "model": "GT",
+    "color": "White",
+    "brand": "Hot Wheels",
+    "sku": "hyy92",
+    "image": "car_images/hyy92.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [],
+    "weight_g": 36.2
+  },
+  {
+    "name": "Lamborghini Aventador Coupe - Black",
+    "make": "Lamborghini",
+    "model": "Aventador Coupe",
+    "color": "Black",
+    "brand": "Hot Wheels",
+    "sku": "jhw77",
+    "image": "car_images/jhw77.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar"
+    ],
+    "Special": [],
+    "weight_g": 70
   }
 ]
