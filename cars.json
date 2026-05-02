@@ -7502,5 +7502,430 @@
     ],
     "Special": [],
     "weight_g": 70
+  },
+  {
+    "name": "Toyota Supra MK IV (A80) '95 - Orange",
+    "make": "Toyota",
+    "model": "Supra MK IV (A80) '95",
+    "color": "Orange",
+    "brand": "Hot Wheels",
+    "sku": "jby30",
+    "image": "car_images/jby30.webp",
+    "Body": [
+      "Coupe",
+      "Liftback"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Streat Racing"
+    ],
+    "weight_g": 32.1
+  },
+  {
+    "name": "Toyota Supra MK IV (A80) '95 - White",
+    "make": "Toyota",
+    "model": "Supra MK IV (A80) '95",
+    "color": "White",
+    "brand": "Hot Wheels",
+    "sku": "jby33",
+    "image": "car_images/jby33.webp",
+    "Body": [
+      "Coupe",
+      "Liftback"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Streat Racing"
+    ],
+    "weight_g": 31.9
+  },
+  {
+    "name": "Mitsubishi Eclipse '95",
+    "make": "Mitsubishi",
+    "model": "Eclipse '95",
+    "color": "Green",
+    "brand": "Hot Wheels",
+    "sku": "jby29",
+    "image": "car_images/jby29.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Streat Racing"
+    ],
+    "weight_g": 50.4
+  },
+  {
+    "name": "Nissan Sklyline GT-R (BNR34) - Silver",
+    "make": "Nissan",
+    "model": "Sklyline GT-R (BNR34)",
+    "color": "Silver",
+    "brand": "Hot Wheels",
+    "sku": "jby31",
+    "image": "car_images/jby31.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [
+      "Streat Racing"
+    ],
+    "weight_g": 39
+  },
+  {
+    "name": "Ford GT-40 - Blue",
+    "make": "Ford",
+    "model": "GT-40",
+    "color": "Blue",
+    "brand": "Hot Wheels",
+    "sku": "hrw39",
+    "image": "car_images/hrw39.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Prototype",
+      "GT"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic"
+    ],
+    "weight_g": 37.1
+  },
+  {
+    "name": "Delorean Alpha 5 - White",
+    "make": "Delorean",
+    "model": "Alpha 5",
+    "color": "White",
+    "brand": "Hot Wheels",
+    "sku": "htb84",
+    "image": "car_images/htb84.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [],
+    "weight_g": 32
+  },
+  {
+    "name": "Kia Stinger GT '19 - Ceramic Silver",
+    "make": "Kia",
+    "model": "Stinger GT '19",
+    "color": "Ceramic Silver",
+    "brand": "Hot Wheels",
+    "sku": "GHF02",
+    "image": "car_images/GHF02.webp",
+    "Body": [
+      "Fastback",
+      "Sedan"
+    ],
+    "Type": [
+      "GT",
+      "Sports Car"
+    ],
+    "Special": [],
+    "weight_g": 38.9
+  },
+  {
+    "name": "McLaren F1 - Red",
+    "make": "McLaren",
+    "model": "F1",
+    "color": "Red",
+    "brand": "Hot Wheels",
+    "sku": "htb11",
+    "image": "car_images/htb11.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar",
+      "GT"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 33.1
+  },
+  {
+    "name": "McLaren F1 - Black",
+    "make": "McLaren",
+    "model": "F1",
+    "color": "Black",
+    "brand": "Hot Wheels",
+    "sku": "hct93",
+    "image": "car_images/hct93.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar",
+      "GT"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 33.1
+  },
+  {
+    "name": "Lotus Emira - Magma Red",
+    "make": "Lotus",
+    "model": "Emira",
+    "color": "Magma Red",
+    "brand": "Hot Wheels",
+    "sku": "hkj30",
+    "image": "car_images/hkj30.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [],
+    "weight_g": 24.9
+  },
+  {
+    "name": "Acura NSX '90 - Silver",
+    "make": "Acura",
+    "model": "NSX '90",
+    "color": "Silver",
+    "brand": "Hot Wheels",
+    "sku": "fjw10",
+    "image": "car_images/fjw10.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Supercar"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 29.5
+  },
+  {
+    "name": "Nissan 350Z - Silver",
+    "make": "Nissan",
+    "model": "350Z",
+    "color": "Silver",
+    "brand": "Hot Wheels",
+    "sku": "k7627",
+    "image": "car_images/k7627.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Streat Racing"
+    ],
+    "weight_g": 33.6
+  },
+  {
+    "name": "Mercury Cougar Custom - Dark Orange",
+    "make": "Mercury",
+    "model": "Cougar Custom",
+    "color": "Dark Orange",
+    "brand": "Hot Wheels",
+    "sku": "l3012",
+    "image": "car_images/l3012.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic",
+      "Tuned"
+    ],
+    "weight_g": 32.6
+  },
+  {
+    "name": "Renault Sport R.S. - Silver",
+    "make": "Renault",
+    "model": "Sport R.S.",
+    "color": "Silver",
+    "brand": "Hot Wheels",
+    "sku": "dhx22",
+    "image": "car_images/dhx22.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned"
+    ],
+    "weight_g": 32.9
+  },
+  {
+    "name": "Renault Sport R.S. - Red",
+    "make": "Renault",
+    "model": "Sport R.S.",
+    "color": "Red",
+    "brand": "Hot Wheels",
+    "sku": "hkj38",
+    "image": "car_images/hkj38.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned"
+    ],
+    "weight_g": 33.5
+  },
+  {
+    "name": "Volvo 850 Estate - White",
+    "make": "Volvo",
+    "model": "850 Estate",
+    "color": "White",
+    "brand": "Hot Wheels",
+    "sku": "ghb52",
+    "image": "car_images/ghb52.webp",
+    "Body": [
+      "Wagon"
+    ],
+    "Type": [
+      "Touring Car"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 29.6
+  },
+  {
+    "name": "Volvo 850 Estate - Red",
+    "make": "Volvo",
+    "model": "850 Estate",
+    "color": "Red",
+    "brand": "Hot Wheels",
+    "sku": "gry26",
+    "image": "car_images/gry26.webp",
+    "Body": [
+      "Wagon"
+    ],
+    "Type": [
+      "Touring Car"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 30
+  },
+  {
+    "name": "Alfa Romeo 4C Spider - Red",
+    "make": "Alfa Romeo",
+    "model": "4C Spider",
+    "color": "Red",
+    "brand": "Majorette",
+    "sku": "271c",
+    "image": "car_images/271c.webp",
+    "Body": [
+      "Convertible",
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [],
+    "weight_g": 33.8
+  },
+  {
+    "name": "Cupra e-Racer - Metalflake Dark Gray",
+    "make": "Cupra",
+    "model": "e-Racer",
+    "color": "Metalflake Dark Gray",
+    "brand": "Hot Wheels",
+    "sku": "jjj08",
+    "image": "car_images/jjj08.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned",
+      "Streat Racing"
+    ],
+    "weight_g": 34.1
+  },
+  {
+    "name": "Pontiac Bonneville '65 - Metalflake Dark Purple",
+    "make": "Pontiac",
+    "model": "Bonneville '65",
+    "color": "Metalflake Dark Purple",
+    "brand": "Hot Wheels",
+    "sku": "jky12",
+    "image": "car_images/jky12.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 37.5
+  },
+  {
+    "name": "Pontiac GTO '66 - Red",
+    "make": "Pontiac",
+    "model": "GTO '66",
+    "color": "Red",
+    "brand": "Hot Wheels",
+    "sku": "jky14",
+    "image": "car_images/jky14.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 60.5
+  },
+  {
+    "name": "Mazda RX-8 - Blue",
+    "make": "Mazda",
+    "model": "RX-8",
+    "color": "Blue",
+    "brand": "Hot Wheels",
+    "sku": "hnt13",
+    "image": "car_images/hnt13.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Streat Racing"
+    ],
+    "weight_g": 40.1
   }
 ]
