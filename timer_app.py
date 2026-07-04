@@ -35,6 +35,16 @@ APP_VERSION = "1.2.6"
 APP_STAGE = ""
 APP_VERSION_LABEL = f"{APP_VERSION} {APP_STAGE}".strip()
 
+def set_app_working_directory():
+    if getattr(sys, "frozen", False):
+        app_dir = os.path.dirname(sys.executable)
+    else:
+        app_dir = os.path.dirname(os.path.abspath(__file__))
+
+    if app_dir:
+        os.chdir(app_dir)
+
+
 class TimerApp(QWidget):
     esp32_message_signal = pyqtSignal(str)
     log_signal = pyqtSignal(str)
@@ -1684,6 +1694,7 @@ v{APP_VERSION_LABEL}
 
 
 if __name__ == "__main__":
+    set_app_working_directory()
     app = QApplication(sys.argv)
     window = TimerApp()
     window.show()
