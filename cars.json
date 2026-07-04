@@ -9162,5 +9162,62 @@
     ],
     "Special": [],
     "weight_g": 30.2
+  },
+  {
+    "name": "Lotus Sport Elise - White / Green",
+    "make": "Lotus",
+    "model": "Sport Elise",
+    "color": "White / Green",
+    "brand": "Hot Wheels",
+    "sku": "hcw31",
+    "image": "car_images/hcw31.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only"
+    ],
+    "weight_g": ""
+  },
+  {
+    "name": "Lotus Sport Elise - Orange",
+    "make": "Lotus",
+    "model": "Sport Elise",
+    "color": "Orange",
+    "brand": "Hot Wheels",
+    "sku": "jjk07",
+    "image": "car_images/jjk07.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Track-only"
+    ],
+    "weight_g": ""
+  },
+  {
+    "name": "Ferrari Dino 206 GT - Red",
+    "make": "Ferrari",
+    "model": "Dino 206 GT",
+    "color": "Red",
+    "brand": "Hot Wheels",
+    "sku": "mm055",
+    "image": "car_images/mm055.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": ""
   }
 ]
