@@ -9453,5 +9453,45 @@
     "Special": [
       "Track-only"
     ]
+  },
+  {
+    "name": "Ford Escort RS1600 '70 - Pearlescent Dark Brown",
+    "make": "Ford",
+    "model": "Escort RS1600 '70",
+    "color": "Pearlescent Dark Brown",
+    "weight_g": 35.3,
+    "brand": "Hot Wheels",
+    "sku": "jkk08",
+    "image": "car_images/jkk08.webp",
+    "Body": [
+      "Coupe",
+      "Sedan"
+    ],
+    "Type": [
+      "Rally",
+      "Sports Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
+  },
+  {
+    "name": "Dodge Hemi Challenger '70 - GlossBlack",
+    "make": "Dodge",
+    "model": "Hemi Challenger '70",
+    "color": "GlossBlack",
+    "weight_g": 36.5,
+    "brand": "Hot Wheels",
+    "sku": "jjk79",
+    "image": "car_images/jjk79.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [
+      "Classic"
+    ]
   }
 ]

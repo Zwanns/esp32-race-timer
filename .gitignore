@@ -4,3 +4,4 @@ car_images/*.webp
 build/
 dist/
 *.spec
+.runtime-data-backup/

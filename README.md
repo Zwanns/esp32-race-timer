@@ -80,6 +80,15 @@ Then build the app:
 .\build_exe.ps1
 ```
 
+The build script preserves the runtime car database and posters from the
+previous `dist\HotWheelsTimer` folder:
+
+- `dist\HotWheelsTimer\cars.json`
+- `dist\HotWheelsTimer\car_images`
+
+This means cars added from the running EXE and poster files copied into
+`dist\HotWheelsTimer\car_images` are kept when a new EXE build is created.
+
 The executable will be created here:
 
 ```text
