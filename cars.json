@@ -9199,13 +9199,13 @@
     "Special": [
       "Track-only"
     ],
-    "weight_g": ""
+    "weight_g": 39.2
   },
   {
-    "name": "Ferrari Dino 206 GT - Red",
+    "name": "Ferrari Dino 206 GT - Rosso Chiaro",
     "make": "Ferrari",
     "model": "Dino 206 GT",
-    "color": "Red",
+    "color": "Rosso Chiaro",
     "brand": "Hot Wheels",
     "sku": "mm055",
     "image": "car_images/mm055.webp",
@@ -9218,6 +9218,217 @@
     "Special": [
       "Classic"
     ],
-    "weight_g": ""
+    "weight_g": 30.1
+  },
+  {
+    "name": "2024 Aston Martin Vantage GT3 - Metalflake Racing Green",
+    "make": "Aston Martin",
+    "model": "Vantage GT3",
+    "color": "Metalflake Racing Green",
+    "brand": "Hot Wheels",
+    "sku": "jjh55",
+    "image": "car_images/jjh55.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT",
+      "Touring Car"
+    ],
+    "Special": [
+      "Track-only"
+    ],
+    "weight_g": 35.3
+  },
+  {
+    "name": "BMW 635 CSi - White",
+    "make": "BMW",
+    "model": "635 CSi",
+    "color": "White",
+    "brand": "Hot Wheels",
+    "sku": "jjk00",
+    "image": "car_images/jjk00.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "Touring Car"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 33.3
+  },
+  {
+    "name": "Alfa Romeo GTV6 3.0 #30 - Silver",
+    "make": "Alfa Romeo",
+    "model": "GTV6 3.0 #30",
+    "color": "Silver",
+    "brand": "Hot Wheels",
+    "sku": "jky30",
+    "image": "car_images/jky30.webp",
+    "Body": [
+      "Coupe",
+      "Liftback"
+    ],
+    "Type": [
+      "Sports Car",
+      "Touring Car"
+    ],
+    "Special": [
+      "Classic"
+    ],
+    "weight_g": 31.6
+  },
+  {
+    "name": "Dodge Charger Hellcat '20 - Gray",
+    "make": "Dodge",
+    "model": "Charger Hellcat '20",
+    "color": "Gray",
+    "brand": "Hot Wheels",
+    "sku": "jjj87",
+    "image": "car_images/jjj87.webp",
+    "Body": [
+      "Sedan"
+    ],
+    "Type": [
+      "Muscle Car"
+    ],
+    "Special": [],
+    "weight_g": 40.0
+  },
+  {
+    "name": "Honda Civic Custom - Metalflake Teal",
+    "make": "Honda",
+    "model": "Civic Custom",
+    "color": "Metalflake Teal",
+    "brand": "Hot Wheels",
+    "sku": "jjj81",
+    "image": "car_images/jjj81.webp",
+    "Body": [
+      "Hatchback"
+    ],
+    "Type": [
+      "Sports Car"
+    ],
+    "Special": [
+      "Tuned"
+    ],
+    "weight_g": 28.5
+  },
+  {
+    "name": "Ferrari 365 GTB4 Competizione - Rosso Corsa",
+    "make": "Ferrari",
+    "model": "365 GTB4 Competizione",
+    "color": "Rosso Corsa",
+    "brand": "Hot Wheels",
+    "sku": "mm052",
+    "image": "car_images/mm052.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "GT"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic"
+    ],
+    "weight_g": 32.3
+  },
+  {
+    "name": "Ferrari SF90 Stradale - Rosso Imola",
+    "make": "Ferrari",
+    "model": "SF90 Stradale",
+    "color": "Rosso Imola",
+    "brand": "Hot Wheels",
+    "sku": "mm051",
+    "image": "car_images/mm051.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar",
+      "Supercar"
+    ],
+    "Special": [],
+    "weight_g": 36.4
+  },
+  {
+    "name": "Ferrari F40 Competizione - Rosso Scuderia",
+    "make": "Ferrari",
+    "model": "F40 Competizione",
+    "color": "Rosso Scuderia",
+    "brand": "Hot Wheels",
+    "sku": "mm054",
+    "image": "car_images/mm054.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Supercar",
+      "GT"
+    ],
+    "Special": [
+      "Track-only",
+      "Classic"
+    ],
+    "weight_g": 28.7
+  },
+  {
+    "name": "Ferrari 12Cilindri - Rosso Imola",
+    "make": "Ferrari",
+    "model": "12Cilindri",
+    "color": "Rosso Imola",
+    "brand": "Hot Wheels",
+    "sku": "mm053",
+    "image": "car_images/mm053.webp",
+    "Body": [
+      "Coupe",
+      "Fastback"
+    ],
+    "Type": [
+      "GT",
+      "Sports Car"
+    ],
+    "Special": [],
+    "weight_g": 32.5
+  },
+  {
+    "name": "Ferrari SF90 Stradale - Nero Daytona",
+    "make": "Ferrari",
+    "model": "SF90 Stradale",
+    "color": "Nero Daytona",
+    "brand": "Hot Wheels",
+    "sku": "jjk89",
+    "image": "car_images/jjk89.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Hypercar",
+      "Supercar"
+    ],
+    "Special": [],
+    "weight_g": 32.2
+  },
+  {
+    "name": "Porsche 911 Carrera T - Black",
+    "make": "Porsche",
+    "model": "911 Carrera T",
+    "color": "Black",
+    "brand": "Hot Wheels",
+    "sku": "jjk80",
+    "image": "car_images/jjk80.webp",
+    "Body": [
+      "Coupe"
+    ],
+    "Type": [
+      "Sports Car",
+      "GT"
+    ],
+    "Special": [],
+    "weight_g": 30.6
   }
 ]
