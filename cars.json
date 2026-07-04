@@ -2553,9 +2553,10 @@
     "make": "Mercedes-Benz",
     "model": "500 E",
     "color": "Black",
+    "weight_g": 38.5,
     "brand": "Hot Wheels",
-    "sku": "GRX59",
-    "image": "car_images/GRX59.webp",
+    "sku": "jkl08",
+    "image": "car_images/jkl08.webp",
     "Body": [
       "Sedan"
     ],
@@ -2565,8 +2566,7 @@
     ],
     "Special": [
       "Classic"
-    ],
-    "weight_g": 38.5
+    ]
   },
   {
     "name": "Ford Mustang '92 - Black",
@@ -3669,6 +3669,7 @@
     "make": "Aston Martin",
     "model": "Vulcan",
     "color": "Lime Green",
+    "weight_g": 29.1,
     "brand": "Hot Wheels",
     "sku": "fyb45",
     "image": "car_images/fyb45.webp",
@@ -3677,11 +3678,12 @@
       "Fastback"
     ],
     "Type": [
-      "Supercar",
-      "Hypercar"
+      "Hypercar",
+      "Supercar"
     ],
-    "Special": [],
-    "weight_g": 29.1
+    "Special": [
+      "Track-only"
+    ]
   },
   {
     "name": "Nissan Skyline GT-R (BCNR32) - Dark Blue",
@@ -4976,22 +4978,22 @@
     "make": "Pontiac",
     "model": "Firebird '70",
     "color": "White",
+    "weight_g": 34.0,
     "brand": "Hot Wheels",
-    "sku": "Pontiac",
-    "image": "car_images/Pontiac.webp",
+    "sku": "hct05",
+    "image": "car_images/hct05.webp",
     "Body": [
       "Liftback"
     ],
     "Type": [
-      "Sports Car",
-      "Muscle Car"
+      "Muscle Car",
+      "Sports Car"
     ],
     "Special": [
-      "Tuned",
       "Classic",
-      "Streat Racing"
-    ],
-    "weight_g": 34
+      "Streat Racing",
+      "Tuned"
+    ]
   },
   {
     "name": "Pontiac irebird '73 - Yellow",
@@ -6667,8 +6669,8 @@
     "color": "White",
     "weight_g": 30.9,
     "brand": "Hot Wheels",
-    "sku": "fys80",
-    "image": "car_images/fys80.webp",
+    "sku": "fyc80",
+    "image": "car_images/fyc80.webp",
     "Body": [
       "Coupe"
     ],
@@ -6878,9 +6880,10 @@
     "make": "Ferrari",
     "model": "333 SP",
     "color": "Silver",
+    "weight_g": 31.3,
     "brand": "Hot Wheels",
-    "sku": "n0490",
-    "image": "car_images/n0490.webp",
+    "sku": "no490",
+    "image": "car_images/no490.webp",
     "Body": [
       "Bolid"
     ],
@@ -6889,8 +6892,7 @@
     ],
     "Special": [
       "Track-only"
-    ],
-    "weight_g": 31.3
+    ]
   },
   {
     "name": "Dodge Challenger '71 - Orange",
@@ -9430,5 +9432,26 @@
     ],
     "Special": [],
     "weight_g": 30.6
+  },
+  {
+    "name": "Aston Martin Vulcan - Morning Frost White",
+    "make": "Aston Martin",
+    "model": "Vulcan",
+    "color": "Morning Frost White",
+    "weight_g": 29.1,
+    "brand": "Hot Wheels",
+    "sku": "ghc01",
+    "image": "car_images/ghc01.webp",
+    "Body": [
+      "Coupe",
+      "Fastback"
+    ],
+    "Type": [
+      "Hypercar",
+      "Supercar"
+    ],
+    "Special": [
+      "Track-only"
+    ]
   }
 ]
