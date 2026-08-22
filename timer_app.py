@@ -31,7 +31,7 @@ from results_manager import ResultsManager
 from dialogs import AddCarDialog, SettingsDialog
 
 
-APP_VERSION = "1.2.6"
+APP_VERSION = "1.2.7"
 APP_STAGE = ""
 APP_VERSION_LABEL = f"{APP_VERSION} {APP_STAGE}".strip()
 
@@ -95,6 +95,8 @@ class TimerApp(QWidget):
         self.current_time = None
         self.finish_time_from_module = None  # Точное время от FINISH модуля
         self.current_image_path = ""  # Текущий путь к изображению машины
+        self.start_module_online = False
+        self.finish_module_online = False
 
         # ===== БАЗА МАШИНОК: ЗАГРУЗКА ИЗ JSON =====
         self.cars_data = self.car_db.cars_data
@@ -176,8 +178,8 @@ class TimerApp(QWidget):
         self.finish_indicator.setStyleSheet("font-size: 20px; color: red;")
         self.finish_status = QLabel("Финишный модуль: Offline")
 
-        self.start_beam = QLabel("Стартовый луч: Locked")
-        self.finish_beam = QLabel("Финишный луч: Locked")
+        self.start_beam = QLabel("Стартовый луч: —")
+        self.finish_beam = QLabel("Финишный луч: —")
 
         self.start_temp_title = QLabel("Температура старта:")
         self.start_temp_label = QLabel("--.- °C")
@@ -867,21 +869,47 @@ class TimerApp(QWidget):
 
     # ===== СЛУЖЕБНАЯ ФУНКЦИЯ: СОСТОЯНИЕ FINISH =====
     def update_finish_connection_state(self, online):
+        was_online = self.finish_module_online
+        self.finish_module_online = online
         if online:
             self.finish_status.setText("Финишный модуль: Online")
             self.finish_indicator.setStyleSheet("font-size: 20px; color: lime;")
         else:
             self.finish_status.setText("Финишный модуль: Offline")
             self.finish_indicator.setStyleSheet("font-size: 20px; color: red;")
+            self.finish_beam.setText("Финишный луч: —")
+            self.finish_temp_label.setText("— °C")
+            if was_online and self.live_timer.isActive():
+                self.cancel_race_due_to_module_loss("FINISH")
 
     # ===== СЛУЖЕБНАЯ ФУНКЦИЯ: СОСТОЯНИЕ START =====
     def update_start_connection_state(self, online):
+        was_online = self.start_module_online
+        self.start_module_online = online
         if online:
             self.start_status.setText("Стартовый модуль: Online")
             self.start_indicator.setStyleSheet("font-size: 20px; color: lime;")
         else:
             self.start_status.setText("Стартовый модуль: Offline")
             self.start_indicator.setStyleSheet("font-size: 20px; color: red;")
+            self.start_beam.setText("Стартовый луч: —")
+            self.start_temp_label.setText("— °C")
+            if was_online and self.live_timer.isActive():
+                self.cancel_race_due_to_module_loss("START")
+
+    def cancel_race_due_to_module_loss(self, module):
+        self.live_timer.stop()
+        self.race_start_time = None
+        self.current_time = None
+        self.finish_time_from_module = None
+        self.mode_label.setText(f"Режим системы: ERROR — {module} Offline")
+        self.time_label.setText("Время: 0.000")
+        self.time_display.setText("0.000")
+        self.set_ready_style()
+        self.save_btn.setEnabled(False)
+        self.manual_race_btn.setText("Старт")
+        self.update_google_status_label()
+        self.log(f"Заезд отменен: модуль {module} потерял связь")
 
     # ===== ФОТО: ПОКАЗАТЬ ЗАГЛУШКУ =====
     def set_default_car_photo(self):

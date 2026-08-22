@@ -4,7 +4,7 @@ Desktop app for timing Hot Wheels races with ESP32 start/finish modules, a local
 
 ## Current Version
 
-- `1.2.6`
+- `1.2.7`
 
 ## Features
 
