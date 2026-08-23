@@ -65,13 +65,73 @@ class CarDatabase:
         ("Special", "Special")
     ]
 
-    def __init__(self, json_file="cars.json"):
+    def __init__(self, json_file="cars.json", image_directory="car_images"):
         self.json_file = json_file
+        self.set_image_directory(image_directory)
         self.cars_data = self.load_cars_database()
         self.reference_options = self.load_reference_options()
         self.ensure_reference_metadata_persisted()
         self.cars_data = self.load_cars_database()
         self.reference_options = self.load_reference_options()
+
+    def set_image_directory(self, image_directory):
+        directory_text = str(image_directory or "car_images").strip()
+        self.image_directory = os.path.abspath(os.path.expanduser(directory_text))
+
+    def _find_existing_image_path_by_sku(self, sku):
+        sku_text = str(sku).strip()
+        if not sku_text or not os.path.isdir(self.image_directory):
+            return ""
+
+        preferred_extensions = [".webp", ".png", ".jpg", ".jpeg"]
+        matched_files = []
+
+        try:
+            with os.scandir(self.image_directory) as entries:
+                for entry in entries:
+                    if not entry.is_file():
+                        continue
+
+                    stem, extension = os.path.splitext(entry.name)
+                    extension = extension.lower()
+                    if stem.lower() == sku_text.lower() and extension in preferred_extensions:
+                        matched_files.append((entry.path, entry.name, extension))
+        except OSError:
+            return ""
+
+        if not matched_files:
+            return ""
+
+        matched_files.sort(
+            key=lambda item: (
+                preferred_extensions.index(item[2]) if item[2] in preferred_extensions else len(preferred_extensions),
+                item[1].lower()
+            )
+        )
+        return os.path.abspath(matched_files[0][0])
+
+    def resolve_car_image_path(self, car_data):
+        if not isinstance(car_data, dict):
+            return ""
+
+        sku_match = self._find_existing_image_path_by_sku(car_data.get("sku", ""))
+        if sku_match:
+            return sku_match
+
+        stored_image = str(car_data.get("image", "")).strip()
+        stored_filename = os.path.basename(stored_image.replace("\\", "/"))
+        if not stored_filename or not os.path.isdir(self.image_directory):
+            return ""
+
+        try:
+            with os.scandir(self.image_directory) as entries:
+                for entry in entries:
+                    if entry.is_file() and entry.name.lower() == stored_filename.lower():
+                        return os.path.abspath(entry.path)
+        except OSError:
+            return ""
+
+        return ""
 
     def _get_default_reference_options(self):
         return {
@@ -103,33 +163,11 @@ class CarDatabase:
             return ""
 
         default_path = os.path.join("car_images", f"{sku_text}.webp").replace("\\", "/")
-        if not os.path.isdir("car_images"):
+        existing_path = self._find_existing_image_path_by_sku(sku_text)
+        if not existing_path:
             return default_path
 
-        preferred_extensions = [".webp", ".png", ".jpg", ".jpeg"]
-        matched_files = []
-
-        try:
-            for entry in os.scandir("car_images"):
-                if not entry.is_file():
-                    continue
-
-                stem, extension = os.path.splitext(entry.name)
-                if stem.lower() == sku_text.lower():
-                    matched_files.append((entry.name, extension.lower()))
-        except Exception:
-            return default_path
-
-        if not matched_files:
-            return default_path
-
-        matched_files.sort(
-            key=lambda item: (
-                preferred_extensions.index(item[1]) if item[1] in preferred_extensions else len(preferred_extensions),
-                item[0].lower()
-            )
-        )
-        return os.path.join("car_images", matched_files[0][0]).replace("\\", "/")
+        return os.path.join("car_images", os.path.basename(existing_path)).replace("\\", "/")
 
     def _normalize_multi_value_field(self, value):
         if isinstance(value, list):

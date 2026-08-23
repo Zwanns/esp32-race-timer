@@ -47,11 +47,14 @@ Import behavior:
 
 ## Posters
 
-Car posters should be placed in the `car_images` folder.
+The image folder can be changed in `Настройки` -> `Папка изображений`.
+The selected folder is remembered between launches and is also used by the
+built EXE. If no folder has been selected yet, the app uses the `car_images`
+folder next to the running script or EXE.
 
 Recommended naming:
 
-- `SKU.webp`
+- `SKU.webp` (also supports `.png`, `.jpg`, and `.jpeg`)
 
 Examples:
 
@@ -88,6 +91,8 @@ previous `dist\HotWheelsTimer` folder:
 
 This means cars added from the running EXE and poster files copied into
 `dist\HotWheelsTimer\car_images` are kept when a new EXE build is created.
+When a different image folder is selected in the app settings, the EXE reads
+posters directly from that selected folder instead.
 
 The executable will be created here:
 

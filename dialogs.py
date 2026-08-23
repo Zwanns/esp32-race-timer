@@ -1,8 +1,9 @@
+import os
 import re
 from PyQt6.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QGridLayout, QGroupBox,
     QLabel, QLineEdit, QPushButton, QComboBox, QCheckBox, QMessageBox,
-    QListWidget, QAbstractItemView, QTextEdit, QInputDialog
+    QListWidget, QAbstractItemView, QTextEdit, QInputDialog, QFileDialog
 )
 from PyQt6.QtCore import Qt
 from car_database import BODY_TOOLTIPS, TYPE_TOOLTIPS, SPECIAL_TOOLTIPS
@@ -288,12 +289,14 @@ class ReferenceListEditor(QGroupBox):
 
 
 class SettingsDialog(QDialog):
-    def __init__(self, reference_options, existing_cars=None, parent=None):
+    def __init__(self, reference_options, existing_cars=None, image_folder="", parent=None):
         super().__init__(parent)
 
         self.reference_options = reference_options
         self.existing_cars = existing_cars or []
+        self.image_folder = os.path.abspath(image_folder or "car_images")
         self.result_reference_options = None
+        self.result_image_folder = None
         self.rename_operations = {
             "brand": [],
             "Body": [],
@@ -302,9 +305,31 @@ class SettingsDialog(QDialog):
         }
 
         self.setWindowTitle("Настройки")
-        self.setMinimumSize(880, 520)
+        self.setMinimumSize(880, 620)
 
         main_layout = QVBoxLayout()
+
+        image_folder_group = QGroupBox("Папка изображений")
+        image_folder_layout = QVBoxLayout()
+        image_folder_row = QHBoxLayout()
+        self.image_folder_input = QLineEdit(self.image_folder)
+        self.image_folder_input.setReadOnly(True)
+        self.image_folder_input.setToolTip(self.image_folder)
+        choose_image_folder_btn = QPushButton("Выбрать папку…")
+        choose_image_folder_btn.clicked.connect(self.choose_image_folder)
+        image_folder_row.addWidget(self.image_folder_input, 1)
+        image_folder_row.addWidget(choose_image_folder_btn)
+
+        image_folder_hint = QLabel(
+            "Добавляйте изображения в эту папку и называйте их по SKU, например JBB14.webp. "
+            "Поддерживаются WebP, PNG, JPG и JPEG."
+        )
+        image_folder_hint.setWordWrap(True)
+        image_folder_hint.setStyleSheet("color: #666666;")
+        image_folder_layout.addLayout(image_folder_row)
+        image_folder_layout.addWidget(image_folder_hint)
+        image_folder_group.setLayout(image_folder_layout)
+
         lists_layout = QHBoxLayout()
         lists_layout.setSpacing(12)
 
@@ -365,12 +390,30 @@ class SettingsDialog(QDialog):
         buttons_layout.addWidget(save_btn)
         buttons_layout.addWidget(cancel_btn)
 
+        main_layout.addWidget(image_folder_group)
         main_layout.addLayout(lists_layout)
         main_layout.addWidget(hint_label)
         main_layout.addLayout(buttons_layout)
         self.setLayout(main_layout)
 
+    def choose_image_folder(self):
+        selected_folder = QFileDialog.getExistingDirectory(
+            self,
+            "Выберите папку изображений",
+            self.image_folder
+        )
+        if not selected_folder:
+            return
+
+        self.image_folder = os.path.abspath(selected_folder)
+        self.image_folder_input.setText(self.image_folder)
+        self.image_folder_input.setToolTip(self.image_folder)
+
     def validate_and_accept(self):
+        if not os.path.isdir(self.image_folder):
+            QMessageBox.warning(self, "Ошибка", "Выбранная папка изображений не существует")
+            return
+
         updated_reference_options = dict(self.reference_options)
         updated_reference_options["Brand"] = self.brand_editor.get_items()
         updated_reference_options["Body"] = self.body_editor.get_items()
@@ -393,10 +436,14 @@ class SettingsDialog(QDialog):
             return
 
         self.result_reference_options = updated_reference_options
+        self.result_image_folder = self.image_folder
         self.accept()
 
     def get_reference_options(self):
         return self.result_reference_options
+
+    def get_image_folder(self):
+        return self.result_image_folder
 
     def get_rename_operations(self):
         return self.rename_operations

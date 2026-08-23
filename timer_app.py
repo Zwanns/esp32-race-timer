@@ -21,7 +21,7 @@ from PyQt6.QtWidgets import (
     QFileDialog,
     QSizePolicy, QDialog
 )
-from PyQt6.QtCore import Qt, QTimer, pyqtSignal
+from PyQt6.QtCore import Qt, QTimer, QSettings, pyqtSignal
 from PyQt6.QtGui import QFontDatabase, QFont, QColor, QIcon, QPixmap
 
 from car_database import CarDatabase, BODY_TOOLTIPS, TYPE_TOOLTIPS, SPECIAL_TOOLTIPS
@@ -31,7 +31,7 @@ from results_manager import ResultsManager
 from dialogs import AddCarDialog, SettingsDialog
 
 
-APP_VERSION = "1.2.7"
+APP_VERSION = "1.2.8"
 APP_STAGE = ""
 APP_VERSION_LABEL = f"{APP_VERSION} {APP_STAGE}".strip()
 
@@ -53,6 +53,12 @@ class TimerApp(QWidget):
 
     def __init__(self):
         super().__init__()
+
+        self.app_settings = QSettings("HotWheelsTimer", "HotWheelsTimer")
+        saved_image_folder = str(self.app_settings.value("paths/image_folder", "")).strip()
+        self.image_folder = os.path.abspath(
+            os.path.expanduser(saved_image_folder or "car_images")
+        )
 
         # ===== НАСТРОЙКИ: GOOGLE SHEETS =====
         self.webapp_url = "https://script.google.com/macros/s/AKfycbwC2D8vVUZTi9cpQAloBfx8_PYufiq4v_AX3dzaI_icqb7qjYCWrC8tn4_tXbcK_d5i/exec"
@@ -85,7 +91,7 @@ class TimerApp(QWidget):
         """)
 
         # ===== МЕНЕДЖЕРЫ =====
-        self.car_db = CarDatabase()
+        self.car_db = CarDatabase(image_directory=self.image_folder)
         self.network_manager = NetworkManager()
         self.google_sheets = GoogleSheetsManager()
         # results_manager инициализируется позже, после создания self.history
@@ -1194,6 +1200,7 @@ class TimerApp(QWidget):
         dialog = SettingsDialog(
             reference_options=self.reference_options,
             existing_cars=self.car_db.cars_data,
+            image_folder=self.image_folder,
             parent=self
         )
 
@@ -1201,6 +1208,7 @@ class TimerApp(QWidget):
             return
 
         updated_reference_options = dialog.get_reference_options()
+        updated_image_folder = dialog.get_image_folder()
         if not updated_reference_options:
             return
 
@@ -1211,9 +1219,18 @@ class TimerApp(QWidget):
             QMessageBox.warning(self, "Ошибка", "Не удалось сохранить настройки")
             return
 
+        self.image_folder = os.path.abspath(updated_image_folder or self.image_folder)
+        self.app_settings.setValue("paths/image_folder", self.image_folder)
+        self.app_settings.sync()
+        self.car_db.set_image_directory(self.image_folder)
+
         self.reload_cars_data_and_filters(self.resolve_car_name())
-        self.log("Справочники настроек обновлены")
-        QMessageBox.information(self, "Готово", "Настройки успешно сохранены")
+        self.log(f"Настройки обновлены. Папка изображений: {self.image_folder}")
+        QMessageBox.information(
+            self,
+            "Готово",
+            f"Настройки успешно сохранены.\n\nПапка изображений:\n{self.image_folder}"
+        )
 
     def export_cars_to_excel(self):
         default_path = os.path.join(os.getcwd(), "cars_export.xlsx")
@@ -1365,7 +1382,7 @@ class TimerApp(QWidget):
             # SKU: если пустой, показываем прочерк
             sku = car_data.get("sku", "—")
             sku_text = str(sku).strip() if str(sku).strip() else "—"
-            image_path = car_data.get("image", "")
+            image_path = self.car_db.resolve_car_image_path(car_data)
 
             # Вес: если есть значение, добавляем g
             weight_text = f"{weight} g" if weight != "—" else "—"
